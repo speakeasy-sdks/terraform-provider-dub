@@ -3,14 +3,21 @@
 package operations
 
 import (
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/models/shared"
+	"github.com/dub/terraform-provider-dub/internal/sdk/models/shared"
 	"net/http"
 )
 
 type CreateWorkspaceRequestBody struct {
+	Domain *string `json:"domain,omitempty"`
 	Name   string  `json:"name"`
 	Slug   string  `json:"slug"`
-	Domain *string `json:"domain,omitempty"`
+}
+
+func (o *CreateWorkspaceRequestBody) GetDomain() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Domain
 }
 
 func (o *CreateWorkspaceRequestBody) GetName() string {
@@ -25,13 +32,6 @@ func (o *CreateWorkspaceRequestBody) GetSlug() string {
 		return ""
 	}
 	return o.Slug
-}
-
-func (o *CreateWorkspaceRequestBody) GetDomain() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Domain
 }
 
 type CreateWorkspaceResponse struct {

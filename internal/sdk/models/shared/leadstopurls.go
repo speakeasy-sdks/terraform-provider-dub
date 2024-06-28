@@ -3,17 +3,10 @@
 package shared
 
 type LeadsTopUrls struct {
-	// The destination URL
-	URL string `json:"url"`
 	// The number of leads from this URL
 	Leads float64 `json:"leads"`
-}
-
-func (o *LeadsTopUrls) GetURL() string {
-	if o == nil {
-		return ""
-	}
-	return o.URL
+	// The destination URL
+	URL string `json:"url"`
 }
 
 func (o *LeadsTopUrls) GetLeads() float64 {
@@ -21,4 +14,11 @@ func (o *LeadsTopUrls) GetLeads() float64 {
 		return 0.0
 	}
 	return o.Leads
+}
+
+func (o *LeadsTopUrls) GetURL() string {
+	if o == nil {
+		return ""
+	}
+	return o.URL
 }

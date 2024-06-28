@@ -34,10 +34,10 @@ func (e *RateLimitExceededCode) UnmarshalJSON(data []byte) error {
 type RateLimitExceededError struct {
 	// A short code indicating the error code returned.
 	Code RateLimitExceededCode `json:"code"`
-	// A human readable explanation of what went wrong.
-	Message string `json:"message"`
 	// A link to our documentation with more details about this error code
 	DocURL *string `json:"doc_url,omitempty"`
+	// A human readable explanation of what went wrong.
+	Message string `json:"message"`
 }
 
 func (o *RateLimitExceededError) GetCode() RateLimitExceededCode {
@@ -47,18 +47,18 @@ func (o *RateLimitExceededError) GetCode() RateLimitExceededCode {
 	return o.Code
 }
 
-func (o *RateLimitExceededError) GetMessage() string {
-	if o == nil {
-		return ""
-	}
-	return o.Message
-}
-
 func (o *RateLimitExceededError) GetDocURL() *string {
 	if o == nil {
 		return nil
 	}
 	return o.DocURL
+}
+
+func (o *RateLimitExceededError) GetMessage() string {
+	if o == nil {
+		return ""
+	}
+	return o.Message
 }
 
 type RateLimitExceeded struct {

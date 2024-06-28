@@ -20,19 +20,12 @@ func (o *GetMetatagsRequest) GetURL() string {
 
 // GetMetatagsResponseBody - The retrieved metatags
 type GetMetatagsResponseBody struct {
-	// The meta title tag for the URL.
-	Title *string `json:"title"`
 	// The meta description tag for the URL.
 	Description *string `json:"description"`
 	// The OpenGraph image for the URL.
 	Image *string `json:"image"`
-}
-
-func (o *GetMetatagsResponseBody) GetTitle() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Title
+	// The meta title tag for the URL.
+	Title *string `json:"title"`
 }
 
 func (o *GetMetatagsResponseBody) GetDescription() *string {
@@ -47,6 +40,13 @@ func (o *GetMetatagsResponseBody) GetImage() *string {
 		return nil
 	}
 	return o.Image
+}
+
+func (o *GetMetatagsResponseBody) GetTitle() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Title
 }
 
 type GetMetatagsResponse struct {

@@ -5,8 +5,8 @@ package operations
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/internal/utils"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/models/shared"
+	"github.com/dub/terraform-provider-dub/internal/sdk/internal/utils"
+	"github.com/dub/terraform-provider-dub/internal/sdk/models/shared"
 	"net/http"
 )
 
@@ -61,20 +61,20 @@ func (e *PaymentProcessor) UnmarshalJSON(data []byte) error {
 }
 
 type TrackSaleRequestBody struct {
-	// This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
-	CustomerID string `json:"customerId"`
 	// The amount of the sale. Should be passed in cents.
 	Amount int64 `json:"amount"`
-	// The payment processor via which the sale was made.
-	PaymentProcessor PaymentProcessor `json:"paymentProcessor"`
+	// The currency of the sale. Accepts ISO 4217 currency codes.
+	Currency *string `default:"usd" json:"currency"`
+	// This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
+	CustomerID string `json:"customerId"`
 	// The name of the sale event. It can be used to track different types of event for example 'Purchase', 'Upgrade', 'Payment', etc.
 	EventName *string `default:"Purchase" json:"eventName"`
 	// The invoice ID of the sale.
 	InvoiceID *string `default:"null" json:"invoiceId"`
-	// The currency of the sale. Accepts ISO 4217 currency codes.
-	Currency *string `default:"usd" json:"currency"`
 	// Additional metadata to be stored with the sale event.
 	Metadata map[string]any `json:"metadata,omitempty"`
+	// The payment processor via which the sale was made.
+	PaymentProcessor PaymentProcessor `json:"paymentProcessor"`
 }
 
 func (t TrackSaleRequestBody) MarshalJSON() ([]byte, error) {
@@ -88,13 +88,6 @@ func (t *TrackSaleRequestBody) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *TrackSaleRequestBody) GetCustomerID() string {
-	if o == nil {
-		return ""
-	}
-	return o.CustomerID
-}
-
 func (o *TrackSaleRequestBody) GetAmount() int64 {
 	if o == nil {
 		return 0
@@ -102,11 +95,18 @@ func (o *TrackSaleRequestBody) GetAmount() int64 {
 	return o.Amount
 }
 
-func (o *TrackSaleRequestBody) GetPaymentProcessor() PaymentProcessor {
+func (o *TrackSaleRequestBody) GetCurrency() *string {
 	if o == nil {
-		return PaymentProcessor("")
+		return nil
 	}
-	return o.PaymentProcessor
+	return o.Currency
+}
+
+func (o *TrackSaleRequestBody) GetCustomerID() string {
+	if o == nil {
+		return ""
+	}
+	return o.CustomerID
 }
 
 func (o *TrackSaleRequestBody) GetEventName() *string {
@@ -123,13 +123,6 @@ func (o *TrackSaleRequestBody) GetInvoiceID() *string {
 	return o.InvoiceID
 }
 
-func (o *TrackSaleRequestBody) GetCurrency() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Currency
-}
-
 func (o *TrackSaleRequestBody) GetMetadata() map[string]any {
 	if o == nil {
 		return nil
@@ -137,29 +130,22 @@ func (o *TrackSaleRequestBody) GetMetadata() map[string]any {
 	return o.Metadata
 }
 
+func (o *TrackSaleRequestBody) GetPaymentProcessor() PaymentProcessor {
+	if o == nil {
+		return PaymentProcessor("")
+	}
+	return o.PaymentProcessor
+}
+
 // TrackSaleResponseBody - A sale was tracked.
 type TrackSaleResponseBody struct {
-	EventName        string         `json:"eventName"`
-	CustomerID       string         `json:"customerId"`
 	Amount           float64        `json:"amount"`
-	PaymentProcessor string         `json:"paymentProcessor"`
-	InvoiceID        *string        `json:"invoiceId"`
 	Currency         string         `json:"currency"`
+	CustomerID       string         `json:"customerId"`
+	EventName        string         `json:"eventName"`
+	InvoiceID        *string        `json:"invoiceId"`
 	Metadata         map[string]any `json:"metadata"`
-}
-
-func (o *TrackSaleResponseBody) GetEventName() string {
-	if o == nil {
-		return ""
-	}
-	return o.EventName
-}
-
-func (o *TrackSaleResponseBody) GetCustomerID() string {
-	if o == nil {
-		return ""
-	}
-	return o.CustomerID
+	PaymentProcessor string         `json:"paymentProcessor"`
 }
 
 func (o *TrackSaleResponseBody) GetAmount() float64 {
@@ -169,11 +155,25 @@ func (o *TrackSaleResponseBody) GetAmount() float64 {
 	return o.Amount
 }
 
-func (o *TrackSaleResponseBody) GetPaymentProcessor() string {
+func (o *TrackSaleResponseBody) GetCurrency() string {
 	if o == nil {
 		return ""
 	}
-	return o.PaymentProcessor
+	return o.Currency
+}
+
+func (o *TrackSaleResponseBody) GetCustomerID() string {
+	if o == nil {
+		return ""
+	}
+	return o.CustomerID
+}
+
+func (o *TrackSaleResponseBody) GetEventName() string {
+	if o == nil {
+		return ""
+	}
+	return o.EventName
 }
 
 func (o *TrackSaleResponseBody) GetInvoiceID() *string {
@@ -183,18 +183,18 @@ func (o *TrackSaleResponseBody) GetInvoiceID() *string {
 	return o.InvoiceID
 }
 
-func (o *TrackSaleResponseBody) GetCurrency() string {
-	if o == nil {
-		return ""
-	}
-	return o.Currency
-}
-
 func (o *TrackSaleResponseBody) GetMetadata() map[string]any {
 	if o == nil {
 		return nil
 	}
 	return o.Metadata
+}
+
+func (o *TrackSaleResponseBody) GetPaymentProcessor() string {
+	if o == nil {
+		return ""
+	}
+	return o.PaymentProcessor
 }
 
 type TrackSaleResponse struct {

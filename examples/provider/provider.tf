@@ -1,8 +1,8 @@
 terraform {
   required_providers {
     dub = {
-      source  = "speakeasy/dub"
-      version = "0.0.1"
+      source  = "dub/dub"
+      version = "0.1.0"
     }
   }
 }

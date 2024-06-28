@@ -34,10 +34,10 @@ func (e *ConflictCode) UnmarshalJSON(data []byte) error {
 type ConflictError struct {
 	// A short code indicating the error code returned.
 	Code ConflictCode `json:"code"`
-	// A human readable explanation of what went wrong.
-	Message string `json:"message"`
 	// A link to our documentation with more details about this error code
 	DocURL *string `json:"doc_url,omitempty"`
+	// A human readable explanation of what went wrong.
+	Message string `json:"message"`
 }
 
 func (o *ConflictError) GetCode() ConflictCode {
@@ -47,18 +47,18 @@ func (o *ConflictError) GetCode() ConflictCode {
 	return o.Code
 }
 
-func (o *ConflictError) GetMessage() string {
-	if o == nil {
-		return ""
-	}
-	return o.Message
-}
-
 func (o *ConflictError) GetDocURL() *string {
 	if o == nil {
 		return nil
 	}
 	return o.DocURL
+}
+
+func (o *ConflictError) GetMessage() string {
+	if o == nil {
+		return ""
+	}
+	return o.Message
 }
 
 type Conflict struct {

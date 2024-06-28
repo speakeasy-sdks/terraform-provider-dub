@@ -34,10 +34,10 @@ func (e *Code) UnmarshalJSON(data []byte) error {
 type Error struct {
 	// A short code indicating the error code returned.
 	Code Code `json:"code"`
-	// A human readable explanation of what went wrong.
-	Message string `json:"message"`
 	// A link to our documentation with more details about this error code
 	DocURL *string `json:"doc_url,omitempty"`
+	// A human readable explanation of what went wrong.
+	Message string `json:"message"`
 }
 
 func (o *Error) GetCode() Code {
@@ -47,18 +47,18 @@ func (o *Error) GetCode() Code {
 	return o.Code
 }
 
-func (o *Error) GetMessage() string {
-	if o == nil {
-		return ""
-	}
-	return o.Message
-}
-
 func (o *Error) GetDocURL() *string {
 	if o == nil {
 		return nil
 	}
 	return o.DocURL
+}
+
+func (o *Error) GetMessage() string {
+	if o == nil {
+		return ""
+	}
+	return o.Message
 }
 
 type BadRequest struct {

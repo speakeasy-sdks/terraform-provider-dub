@@ -6,8 +6,8 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/internal/utils"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/models/shared"
+	"github.com/dub/terraform-provider-dub/internal/sdk/internal/utils"
+	"github.com/dub/terraform-provider-dub/internal/sdk/models/shared"
 	"net/http"
 )
 
@@ -205,59 +205,59 @@ func (e *One) UnmarshalJSON(data []byte) error {
 	}
 }
 
-type GroupByType string
+type QueryParamGroupByType string
 
 const (
-	GroupByTypeOne GroupByType = "1"
-	GroupByTypeTwo GroupByType = "2"
+	QueryParamGroupByTypeOne QueryParamGroupByType = "1"
+	QueryParamGroupByTypeTwo QueryParamGroupByType = "2"
 )
 
-// GroupBy - The field to group the links by.
-type GroupBy struct {
+// QueryParamGroupBy - The field to group the links by.
+type QueryParamGroupBy struct {
 	One *One
 	Two *Two
 
-	Type GroupByType
+	Type QueryParamGroupByType
 }
 
-func CreateGroupByOne(one One) GroupBy {
-	typ := GroupByTypeOne
+func CreateQueryParamGroupByOne(one One) QueryParamGroupBy {
+	typ := QueryParamGroupByTypeOne
 
-	return GroupBy{
+	return QueryParamGroupBy{
 		One:  &one,
 		Type: typ,
 	}
 }
 
-func CreateGroupByTwo(two Two) GroupBy {
-	typ := GroupByTypeTwo
+func CreateQueryParamGroupByTwo(two Two) QueryParamGroupBy {
+	typ := QueryParamGroupByTypeTwo
 
-	return GroupBy{
+	return QueryParamGroupBy{
 		Two:  &two,
 		Type: typ,
 	}
 }
 
-func (u *GroupBy) UnmarshalJSON(data []byte) error {
+func (u *QueryParamGroupBy) UnmarshalJSON(data []byte) error {
 
 	var one One = One("")
 	if err := utils.UnmarshalJSON(data, &one, "", true, true); err == nil {
 		u.One = &one
-		u.Type = GroupByTypeOne
+		u.Type = QueryParamGroupByTypeOne
 		return nil
 	}
 
 	var two Two = Two("")
 	if err := utils.UnmarshalJSON(data, &two, "", true, true); err == nil {
 		u.Two = &two
-		u.Type = GroupByTypeTwo
+		u.Type = QueryParamGroupByTypeTwo
 		return nil
 	}
 
-	return fmt.Errorf("could not unmarshal `%s` into any supported union types for GroupBy", string(data))
+	return fmt.Errorf("could not unmarshal `%s` into any supported union types for QueryParamGroupBy", string(data))
 }
 
-func (u GroupBy) MarshalJSON() ([]byte, error) {
+func (u QueryParamGroupBy) MarshalJSON() ([]byte, error) {
 	if u.One != nil {
 		return utils.MarshalJSON(u.One, "", true)
 	}
@@ -266,7 +266,7 @@ func (u GroupBy) MarshalJSON() ([]byte, error) {
 		return utils.MarshalJSON(u.Two, "", true)
 	}
 
-	return nil, errors.New("could not marshal union type GroupBy: all fields are null")
+	return nil, errors.New("could not marshal union type QueryParamGroupBy: all fields are null")
 }
 
 type GetLinksCountRequest struct {
@@ -287,7 +287,7 @@ type GetLinksCountRequest struct {
 	// Whether to include tags in the response. Defaults to `false` if not provided.
 	WithTags *bool `default:"false" queryParam:"style=form,explode=true,name=withTags"`
 	// The field to group the links by.
-	GroupBy *GroupBy `queryParam:"style=form,explode=true,name=groupBy"`
+	GroupBy *QueryParamGroupBy `queryParam:"style=form,explode=true,name=groupBy"`
 }
 
 func (g GetLinksCountRequest) MarshalJSON() ([]byte, error) {
@@ -357,7 +357,7 @@ func (o *GetLinksCountRequest) GetWithTags() *bool {
 	return o.WithTags
 }
 
-func (o *GetLinksCountRequest) GetGroupBy() *GroupBy {
+func (o *GetLinksCountRequest) GetGroupBy() *QueryParamGroupBy {
 	if o == nil {
 		return nil
 	}

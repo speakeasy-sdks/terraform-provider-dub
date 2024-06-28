@@ -5,8 +5,8 @@ package operations
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/internal/utils"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/models/shared"
+	"github.com/dub/terraform-provider-dub/internal/sdk/internal/utils"
+	"github.com/dub/terraform-provider-dub/internal/sdk/models/shared"
 	"net/http"
 )
 

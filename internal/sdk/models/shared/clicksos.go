@@ -3,17 +3,10 @@
 package shared
 
 type ClicksOS struct {
-	// The name of the OS
-	Os string `json:"os"`
 	// The number of clicks from this OS
 	Clicks float64 `json:"clicks"`
-}
-
-func (o *ClicksOS) GetOs() string {
-	if o == nil {
-		return ""
-	}
-	return o.Os
+	// The name of the OS
+	Os string `json:"os"`
 }
 
 func (o *ClicksOS) GetClicks() float64 {
@@ -21,4 +14,11 @@ func (o *ClicksOS) GetClicks() float64 {
 		return 0.0
 	}
 	return o.Clicks
+}
+
+func (o *ClicksOS) GetOs() string {
+	if o == nil {
+		return ""
+	}
+	return o.Os
 }

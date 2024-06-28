@@ -3,17 +3,10 @@
 package shared
 
 type ClicksReferers struct {
-	// The name of the referer. If unknown, this will be `(direct)`
-	Referer string `json:"referer"`
 	// The number of clicks from this referer
 	Clicks float64 `json:"clicks"`
-}
-
-func (o *ClicksReferers) GetReferer() string {
-	if o == nil {
-		return ""
-	}
-	return o.Referer
+	// The name of the referer. If unknown, this will be `(direct)`
+	Referer string `json:"referer"`
 }
 
 func (o *ClicksReferers) GetClicks() float64 {
@@ -21,4 +14,11 @@ func (o *ClicksReferers) GetClicks() float64 {
 		return 0.0
 	}
 	return o.Clicks
+}
+
+func (o *ClicksReferers) GetReferer() string {
+	if o == nil {
+		return ""
+	}
+	return o.Referer
 }

@@ -3,7 +3,7 @@
 package operations
 
 import (
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/models/shared"
+	"github.com/dub/terraform-provider-dub/internal/sdk/models/shared"
 	"net/http"
 )
 
@@ -28,14 +28,28 @@ func (o *TrackCustomerGlobals) GetProjectSlug() *string {
 }
 
 type TrackCustomerRequestBody struct {
+	// Avatar of the customer in the client's app.
+	CustomerAvatar *string `json:"customerAvatar,omitempty"`
+	// Email of the customer in the client's app.
+	CustomerEmail *string `json:"customerEmail,omitempty"`
 	// This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
 	CustomerID string `json:"customerId"`
 	// Name of the customer in the client's app.
 	CustomerName *string `json:"customerName,omitempty"`
-	// Email of the customer in the client's app.
-	CustomerEmail *string `json:"customerEmail,omitempty"`
-	// Avatar of the customer in the client's app.
-	CustomerAvatar *string `json:"customerAvatar,omitempty"`
+}
+
+func (o *TrackCustomerRequestBody) GetCustomerAvatar() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CustomerAvatar
+}
+
+func (o *TrackCustomerRequestBody) GetCustomerEmail() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CustomerEmail
 }
 
 func (o *TrackCustomerRequestBody) GetCustomerID() string {
@@ -52,26 +66,26 @@ func (o *TrackCustomerRequestBody) GetCustomerName() *string {
 	return o.CustomerName
 }
 
-func (o *TrackCustomerRequestBody) GetCustomerEmail() *string {
-	if o == nil {
-		return nil
-	}
-	return o.CustomerEmail
+// TrackCustomerResponseBody - A customer was tracked.
+type TrackCustomerResponseBody struct {
+	CustomerAvatar *string `json:"customerAvatar"`
+	CustomerEmail  *string `json:"customerEmail"`
+	CustomerID     string  `json:"customerId"`
+	CustomerName   *string `json:"customerName"`
 }
 
-func (o *TrackCustomerRequestBody) GetCustomerAvatar() *string {
+func (o *TrackCustomerResponseBody) GetCustomerAvatar() *string {
 	if o == nil {
 		return nil
 	}
 	return o.CustomerAvatar
 }
 
-// TrackCustomerResponseBody - A customer was tracked.
-type TrackCustomerResponseBody struct {
-	CustomerID     string  `json:"customerId"`
-	CustomerName   *string `json:"customerName"`
-	CustomerEmail  *string `json:"customerEmail"`
-	CustomerAvatar *string `json:"customerAvatar"`
+func (o *TrackCustomerResponseBody) GetCustomerEmail() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CustomerEmail
 }
 
 func (o *TrackCustomerResponseBody) GetCustomerID() string {
@@ -86,20 +100,6 @@ func (o *TrackCustomerResponseBody) GetCustomerName() *string {
 		return nil
 	}
 	return o.CustomerName
-}
-
-func (o *TrackCustomerResponseBody) GetCustomerEmail() *string {
-	if o == nil {
-		return nil
-	}
-	return o.CustomerEmail
-}
-
-func (o *TrackCustomerResponseBody) GetCustomerAvatar() *string {
-	if o == nil {
-		return nil
-	}
-	return o.CustomerAvatar
 }
 
 type TrackCustomerResponse struct {

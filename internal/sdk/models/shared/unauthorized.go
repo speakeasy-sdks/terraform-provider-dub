@@ -34,10 +34,10 @@ func (e *UnauthorizedCode) UnmarshalJSON(data []byte) error {
 type UnauthorizedError struct {
 	// A short code indicating the error code returned.
 	Code UnauthorizedCode `json:"code"`
-	// A human readable explanation of what went wrong.
-	Message string `json:"message"`
 	// A link to our documentation with more details about this error code
 	DocURL *string `json:"doc_url,omitempty"`
+	// A human readable explanation of what went wrong.
+	Message string `json:"message"`
 }
 
 func (o *UnauthorizedError) GetCode() UnauthorizedCode {
@@ -47,18 +47,18 @@ func (o *UnauthorizedError) GetCode() UnauthorizedCode {
 	return o.Code
 }
 
-func (o *UnauthorizedError) GetMessage() string {
-	if o == nil {
-		return ""
-	}
-	return o.Message
-}
-
 func (o *UnauthorizedError) GetDocURL() *string {
 	if o == nil {
 		return nil
 	}
 	return o.DocURL
+}
+
+func (o *UnauthorizedError) GetMessage() string {
+	if o == nil {
+		return ""
+	}
+	return o.Message
 }
 
 type Unauthorized struct {

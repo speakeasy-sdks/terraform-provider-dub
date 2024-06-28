@@ -3,289 +3,261 @@
 package shared
 
 import (
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/internal/utils"
+	"github.com/dub/terraform-provider-dub/internal/sdk/internal/utils"
 )
 
 // Geo targeting information for the short link in JSON format `{[COUNTRY]: https://example.com }`. Learn more: https://d.to/geo
 type Geo struct {
-	Af *string `json:"AF,omitempty"`
-	Al *string `json:"AL,omitempty"`
-	Dz *string `json:"DZ,omitempty"`
-	As *string `json:"AS,omitempty"`
 	Ad *string `json:"AD,omitempty"`
-	Ao *string `json:"AO,omitempty"`
-	Ai *string `json:"AI,omitempty"`
-	Aq *string `json:"AQ,omitempty"`
+	Ae *string `json:"AE,omitempty"`
+	Af *string `json:"AF,omitempty"`
 	Ag *string `json:"AG,omitempty"`
-	Ar *string `json:"AR,omitempty"`
+	Ai *string `json:"AI,omitempty"`
+	Al *string `json:"AL,omitempty"`
 	Am *string `json:"AM,omitempty"`
-	Aw *string `json:"AW,omitempty"`
-	Au *string `json:"AU,omitempty"`
+	Ao *string `json:"AO,omitempty"`
+	Aq *string `json:"AQ,omitempty"`
+	Ar *string `json:"AR,omitempty"`
+	As *string `json:"AS,omitempty"`
 	At *string `json:"AT,omitempty"`
+	Au *string `json:"AU,omitempty"`
+	Aw *string `json:"AW,omitempty"`
+	Ax *string `json:"AX,omitempty"`
 	Az *string `json:"AZ,omitempty"`
-	Bs *string `json:"BS,omitempty"`
-	Bh *string `json:"BH,omitempty"`
-	Bd *string `json:"BD,omitempty"`
-	Bb *string `json:"BB,omitempty"`
-	By *string `json:"BY,omitempty"`
-	Be *string `json:"BE,omitempty"`
-	Bz *string `json:"BZ,omitempty"`
-	Bj *string `json:"BJ,omitempty"`
-	Bm *string `json:"BM,omitempty"`
-	Bt *string `json:"BT,omitempty"`
-	Bo *string `json:"BO,omitempty"`
 	Ba *string `json:"BA,omitempty"`
-	Bw *string `json:"BW,omitempty"`
-	Bv *string `json:"BV,omitempty"`
-	Br *string `json:"BR,omitempty"`
-	Io *string `json:"IO,omitempty"`
-	Bn *string `json:"BN,omitempty"`
-	Bg *string `json:"BG,omitempty"`
+	Bb *string `json:"BB,omitempty"`
+	Bd *string `json:"BD,omitempty"`
+	Be *string `json:"BE,omitempty"`
 	Bf *string `json:"BF,omitempty"`
+	Bg *string `json:"BG,omitempty"`
+	Bh *string `json:"BH,omitempty"`
 	Bi *string `json:"BI,omitempty"`
-	Kh *string `json:"KH,omitempty"`
-	Cm *string `json:"CM,omitempty"`
+	Bj *string `json:"BJ,omitempty"`
+	Bl *string `json:"BL,omitempty"`
+	Bm *string `json:"BM,omitempty"`
+	Bn *string `json:"BN,omitempty"`
+	Bo *string `json:"BO,omitempty"`
+	Bq *string `json:"BQ,omitempty"`
+	Br *string `json:"BR,omitempty"`
+	Bs *string `json:"BS,omitempty"`
+	Bt *string `json:"BT,omitempty"`
+	Bv *string `json:"BV,omitempty"`
+	Bw *string `json:"BW,omitempty"`
+	By *string `json:"BY,omitempty"`
+	Bz *string `json:"BZ,omitempty"`
 	Ca *string `json:"CA,omitempty"`
-	Cv *string `json:"CV,omitempty"`
-	Ky *string `json:"KY,omitempty"`
-	Cf *string `json:"CF,omitempty"`
-	Td *string `json:"TD,omitempty"`
-	Cl *string `json:"CL,omitempty"`
-	Cn *string `json:"CN,omitempty"`
-	Cx *string `json:"CX,omitempty"`
 	Cc *string `json:"CC,omitempty"`
-	Co *string `json:"CO,omitempty"`
-	Km *string `json:"KM,omitempty"`
-	Cg *string `json:"CG,omitempty"`
 	Cd *string `json:"CD,omitempty"`
-	Ck *string `json:"CK,omitempty"`
-	Cr *string `json:"CR,omitempty"`
+	Cf *string `json:"CF,omitempty"`
+	Cg *string `json:"CG,omitempty"`
+	Ch *string `json:"CH,omitempty"`
 	Ci *string `json:"CI,omitempty"`
-	Hr *string `json:"HR,omitempty"`
+	Ck *string `json:"CK,omitempty"`
+	Cl *string `json:"CL,omitempty"`
+	Cm *string `json:"CM,omitempty"`
+	Cn *string `json:"CN,omitempty"`
+	Co *string `json:"CO,omitempty"`
+	Cr *string `json:"CR,omitempty"`
 	Cu *string `json:"CU,omitempty"`
+	Cv *string `json:"CV,omitempty"`
+	Cw *string `json:"CW,omitempty"`
+	Cx *string `json:"CX,omitempty"`
 	Cy *string `json:"CY,omitempty"`
 	Cz *string `json:"CZ,omitempty"`
-	Dk *string `json:"DK,omitempty"`
+	De *string `json:"DE,omitempty"`
 	Dj *string `json:"DJ,omitempty"`
+	Dk *string `json:"DK,omitempty"`
 	Dm *string `json:"DM,omitempty"`
 	Do *string `json:"DO,omitempty"`
+	Dz *string `json:"DZ,omitempty"`
 	Ec *string `json:"EC,omitempty"`
-	Eg *string `json:"EG,omitempty"`
-	Sv *string `json:"SV,omitempty"`
-	Gq *string `json:"GQ,omitempty"`
-	Er *string `json:"ER,omitempty"`
 	Ee *string `json:"EE,omitempty"`
+	Eg *string `json:"EG,omitempty"`
+	Eh *string `json:"EH,omitempty"`
+	Er *string `json:"ER,omitempty"`
+	Es *string `json:"ES,omitempty"`
 	Et *string `json:"ET,omitempty"`
-	Fk *string `json:"FK,omitempty"`
-	Fo *string `json:"FO,omitempty"`
-	Fj *string `json:"FJ,omitempty"`
 	Fi *string `json:"FI,omitempty"`
+	Fj *string `json:"FJ,omitempty"`
+	Fk *string `json:"FK,omitempty"`
+	Fm *string `json:"FM,omitempty"`
+	Fo *string `json:"FO,omitempty"`
 	Fr *string `json:"FR,omitempty"`
-	Gf *string `json:"GF,omitempty"`
-	Pf *string `json:"PF,omitempty"`
-	Tf *string `json:"TF,omitempty"`
 	Ga *string `json:"GA,omitempty"`
-	Gm *string `json:"GM,omitempty"`
+	Gb *string `json:"GB,omitempty"`
+	Gd *string `json:"GD,omitempty"`
 	Ge *string `json:"GE,omitempty"`
-	De *string `json:"DE,omitempty"`
+	Gf *string `json:"GF,omitempty"`
+	Gg *string `json:"GG,omitempty"`
 	Gh *string `json:"GH,omitempty"`
 	Gi *string `json:"GI,omitempty"`
-	Gr *string `json:"GR,omitempty"`
 	Gl *string `json:"GL,omitempty"`
-	Gd *string `json:"GD,omitempty"`
-	Gp *string `json:"GP,omitempty"`
-	Gu *string `json:"GU,omitempty"`
-	Gt *string `json:"GT,omitempty"`
+	Gm *string `json:"GM,omitempty"`
 	Gn *string `json:"GN,omitempty"`
+	Gp *string `json:"GP,omitempty"`
+	Gq *string `json:"GQ,omitempty"`
+	Gr *string `json:"GR,omitempty"`
+	Gs *string `json:"GS,omitempty"`
+	Gt *string `json:"GT,omitempty"`
+	Gu *string `json:"GU,omitempty"`
 	Gw *string `json:"GW,omitempty"`
 	Gy *string `json:"GY,omitempty"`
-	Ht *string `json:"HT,omitempty"`
-	Hm *string `json:"HM,omitempty"`
-	Va *string `json:"VA,omitempty"`
-	Hn *string `json:"HN,omitempty"`
 	Hk *string `json:"HK,omitempty"`
+	Hm *string `json:"HM,omitempty"`
+	Hn *string `json:"HN,omitempty"`
+	Hr *string `json:"HR,omitempty"`
+	Ht *string `json:"HT,omitempty"`
 	Hu *string `json:"HU,omitempty"`
-	Is *string `json:"IS,omitempty"`
-	In *string `json:"IN,omitempty"`
 	ID *string `json:"ID,omitempty"`
-	Ir *string `json:"IR,omitempty"`
-	Iq *string `json:"IQ,omitempty"`
 	Ie *string `json:"IE,omitempty"`
 	Il *string `json:"IL,omitempty"`
+	Im *string `json:"IM,omitempty"`
+	In *string `json:"IN,omitempty"`
+	Io *string `json:"IO,omitempty"`
+	Iq *string `json:"IQ,omitempty"`
+	Ir *string `json:"IR,omitempty"`
+	Is *string `json:"IS,omitempty"`
 	It *string `json:"IT,omitempty"`
+	Je *string `json:"JE,omitempty"`
 	Jm *string `json:"JM,omitempty"`
-	Jp *string `json:"JP,omitempty"`
 	Jo *string `json:"JO,omitempty"`
-	Kz *string `json:"KZ,omitempty"`
+	Jp *string `json:"JP,omitempty"`
 	Ke *string `json:"KE,omitempty"`
+	Kg *string `json:"KG,omitempty"`
+	Kh *string `json:"KH,omitempty"`
 	Ki *string `json:"KI,omitempty"`
+	Km *string `json:"KM,omitempty"`
+	Kn *string `json:"KN,omitempty"`
 	Kp *string `json:"KP,omitempty"`
 	Kr *string `json:"KR,omitempty"`
 	Kw *string `json:"KW,omitempty"`
-	Kg *string `json:"KG,omitempty"`
+	Ky *string `json:"KY,omitempty"`
+	Kz *string `json:"KZ,omitempty"`
 	La *string `json:"LA,omitempty"`
-	Lv *string `json:"LV,omitempty"`
 	Lb *string `json:"LB,omitempty"`
-	Ls *string `json:"LS,omitempty"`
-	Lr *string `json:"LR,omitempty"`
-	Ly *string `json:"LY,omitempty"`
+	Lc *string `json:"LC,omitempty"`
 	Li *string `json:"LI,omitempty"`
+	Lk *string `json:"LK,omitempty"`
+	Lr *string `json:"LR,omitempty"`
+	Ls *string `json:"LS,omitempty"`
 	Lt *string `json:"LT,omitempty"`
 	Lu *string `json:"LU,omitempty"`
-	Mo *string `json:"MO,omitempty"`
+	Lv *string `json:"LV,omitempty"`
+	Ly *string `json:"LY,omitempty"`
+	Ma *string `json:"MA,omitempty"`
+	Mc *string `json:"MC,omitempty"`
+	Md *string `json:"MD,omitempty"`
+	Me *string `json:"ME,omitempty"`
+	Mf *string `json:"MF,omitempty"`
 	Mg *string `json:"MG,omitempty"`
-	Mw *string `json:"MW,omitempty"`
-	My *string `json:"MY,omitempty"`
-	Mv *string `json:"MV,omitempty"`
-	Ml *string `json:"ML,omitempty"`
-	Mt *string `json:"MT,omitempty"`
 	Mh *string `json:"MH,omitempty"`
+	Mk *string `json:"MK,omitempty"`
+	Ml *string `json:"ML,omitempty"`
+	Mm *string `json:"MM,omitempty"`
+	Mn *string `json:"MN,omitempty"`
+	Mo *string `json:"MO,omitempty"`
+	Mp *string `json:"MP,omitempty"`
 	Mq *string `json:"MQ,omitempty"`
 	Mr *string `json:"MR,omitempty"`
-	Mu *string `json:"MU,omitempty"`
-	Yt *string `json:"YT,omitempty"`
-	Mx *string `json:"MX,omitempty"`
-	Fm *string `json:"FM,omitempty"`
-	Md *string `json:"MD,omitempty"`
-	Mc *string `json:"MC,omitempty"`
-	Mn *string `json:"MN,omitempty"`
 	Ms *string `json:"MS,omitempty"`
-	Ma *string `json:"MA,omitempty"`
+	Mt *string `json:"MT,omitempty"`
+	Mu *string `json:"MU,omitempty"`
+	Mv *string `json:"MV,omitempty"`
+	Mw *string `json:"MW,omitempty"`
+	Mx *string `json:"MX,omitempty"`
+	My *string `json:"MY,omitempty"`
 	Mz *string `json:"MZ,omitempty"`
-	Mm *string `json:"MM,omitempty"`
 	Na *string `json:"NA,omitempty"`
-	Nr *string `json:"NR,omitempty"`
-	Np *string `json:"NP,omitempty"`
-	Nl *string `json:"NL,omitempty"`
 	Nc *string `json:"NC,omitempty"`
-	Nz *string `json:"NZ,omitempty"`
-	Ni *string `json:"NI,omitempty"`
 	Ne *string `json:"NE,omitempty"`
-	Ng *string `json:"NG,omitempty"`
-	Nu *string `json:"NU,omitempty"`
 	Nf *string `json:"NF,omitempty"`
-	Mk *string `json:"MK,omitempty"`
-	Mp *string `json:"MP,omitempty"`
+	Ng *string `json:"NG,omitempty"`
+	Ni *string `json:"NI,omitempty"`
+	Nl *string `json:"NL,omitempty"`
 	No *string `json:"NO,omitempty"`
+	Np *string `json:"NP,omitempty"`
+	Nr *string `json:"NR,omitempty"`
+	Nu *string `json:"NU,omitempty"`
+	Nz *string `json:"NZ,omitempty"`
 	Om *string `json:"OM,omitempty"`
-	Pk *string `json:"PK,omitempty"`
-	Pw *string `json:"PW,omitempty"`
-	Ps *string `json:"PS,omitempty"`
 	Pa *string `json:"PA,omitempty"`
-	Pg *string `json:"PG,omitempty"`
-	Py *string `json:"PY,omitempty"`
 	Pe *string `json:"PE,omitempty"`
+	Pf *string `json:"PF,omitempty"`
+	Pg *string `json:"PG,omitempty"`
 	Ph *string `json:"PH,omitempty"`
-	Pn *string `json:"PN,omitempty"`
+	Pk *string `json:"PK,omitempty"`
 	Pl *string `json:"PL,omitempty"`
-	Pt *string `json:"PT,omitempty"`
+	Pm *string `json:"PM,omitempty"`
+	Pn *string `json:"PN,omitempty"`
 	Pr *string `json:"PR,omitempty"`
+	Ps *string `json:"PS,omitempty"`
+	Pt *string `json:"PT,omitempty"`
+	Pw *string `json:"PW,omitempty"`
+	Py *string `json:"PY,omitempty"`
 	Qa *string `json:"QA,omitempty"`
 	Re *string `json:"RE,omitempty"`
 	Ro *string `json:"RO,omitempty"`
+	Rs *string `json:"RS,omitempty"`
 	Ru *string `json:"RU,omitempty"`
 	Rw *string `json:"RW,omitempty"`
-	Sh *string `json:"SH,omitempty"`
-	Kn *string `json:"KN,omitempty"`
-	Lc *string `json:"LC,omitempty"`
-	Pm *string `json:"PM,omitempty"`
-	Vc *string `json:"VC,omitempty"`
-	Ws *string `json:"WS,omitempty"`
-	Sm *string `json:"SM,omitempty"`
-	St *string `json:"ST,omitempty"`
 	Sa *string `json:"SA,omitempty"`
-	Sn *string `json:"SN,omitempty"`
-	Sc *string `json:"SC,omitempty"`
-	Sl *string `json:"SL,omitempty"`
-	Sg *string `json:"SG,omitempty"`
-	Sk *string `json:"SK,omitempty"`
-	Si *string `json:"SI,omitempty"`
 	Sb *string `json:"SB,omitempty"`
-	So *string `json:"SO,omitempty"`
-	Za *string `json:"ZA,omitempty"`
-	Gs *string `json:"GS,omitempty"`
-	Es *string `json:"ES,omitempty"`
-	Lk *string `json:"LK,omitempty"`
+	Sc *string `json:"SC,omitempty"`
 	Sd *string `json:"SD,omitempty"`
-	Sr *string `json:"SR,omitempty"`
-	Sj *string `json:"SJ,omitempty"`
-	Sz *string `json:"SZ,omitempty"`
 	Se *string `json:"SE,omitempty"`
-	Ch *string `json:"CH,omitempty"`
+	Sg *string `json:"SG,omitempty"`
+	Sh *string `json:"SH,omitempty"`
+	Si *string `json:"SI,omitempty"`
+	Sj *string `json:"SJ,omitempty"`
+	Sk *string `json:"SK,omitempty"`
+	Sl *string `json:"SL,omitempty"`
+	Sm *string `json:"SM,omitempty"`
+	Sn *string `json:"SN,omitempty"`
+	So *string `json:"SO,omitempty"`
+	Sr *string `json:"SR,omitempty"`
+	Ss *string `json:"SS,omitempty"`
+	St *string `json:"ST,omitempty"`
+	Sv *string `json:"SV,omitempty"`
+	Sx *string `json:"SX,omitempty"`
 	Sy *string `json:"SY,omitempty"`
-	Tw *string `json:"TW,omitempty"`
-	Tj *string `json:"TJ,omitempty"`
-	Tz *string `json:"TZ,omitempty"`
-	Th *string `json:"TH,omitempty"`
-	Tl *string `json:"TL,omitempty"`
-	Tg *string `json:"TG,omitempty"`
-	Tk *string `json:"TK,omitempty"`
-	To *string `json:"TO,omitempty"`
-	Tt *string `json:"TT,omitempty"`
-	Tn *string `json:"TN,omitempty"`
-	Tr *string `json:"TR,omitempty"`
-	Tm *string `json:"TM,omitempty"`
+	Sz *string `json:"SZ,omitempty"`
 	Tc *string `json:"TC,omitempty"`
+	Td *string `json:"TD,omitempty"`
+	Tf *string `json:"TF,omitempty"`
+	Tg *string `json:"TG,omitempty"`
+	Th *string `json:"TH,omitempty"`
+	Tj *string `json:"TJ,omitempty"`
+	Tk *string `json:"TK,omitempty"`
+	Tl *string `json:"TL,omitempty"`
+	Tm *string `json:"TM,omitempty"`
+	Tn *string `json:"TN,omitempty"`
+	To *string `json:"TO,omitempty"`
+	Tr *string `json:"TR,omitempty"`
+	Tt *string `json:"TT,omitempty"`
 	Tv *string `json:"TV,omitempty"`
-	Ug *string `json:"UG,omitempty"`
+	Tw *string `json:"TW,omitempty"`
+	Tz *string `json:"TZ,omitempty"`
 	Ua *string `json:"UA,omitempty"`
-	Ae *string `json:"AE,omitempty"`
-	Gb *string `json:"GB,omitempty"`
-	Us *string `json:"US,omitempty"`
+	Ug *string `json:"UG,omitempty"`
 	Um *string `json:"UM,omitempty"`
+	Us *string `json:"US,omitempty"`
 	Uy *string `json:"UY,omitempty"`
 	Uz *string `json:"UZ,omitempty"`
-	Vu *string `json:"VU,omitempty"`
+	Va *string `json:"VA,omitempty"`
+	Vc *string `json:"VC,omitempty"`
 	Ve *string `json:"VE,omitempty"`
-	Vn *string `json:"VN,omitempty"`
 	Vg *string `json:"VG,omitempty"`
 	Vi *string `json:"VI,omitempty"`
+	Vn *string `json:"VN,omitempty"`
+	Vu *string `json:"VU,omitempty"`
 	Wf *string `json:"WF,omitempty"`
-	Eh *string `json:"EH,omitempty"`
+	Ws *string `json:"WS,omitempty"`
+	Xk *string `json:"XK,omitempty"`
 	Ye *string `json:"YE,omitempty"`
+	Yt *string `json:"YT,omitempty"`
+	Za *string `json:"ZA,omitempty"`
 	Zm *string `json:"ZM,omitempty"`
 	Zw *string `json:"ZW,omitempty"`
-	Ax *string `json:"AX,omitempty"`
-	Bq *string `json:"BQ,omitempty"`
-	Cw *string `json:"CW,omitempty"`
-	Gg *string `json:"GG,omitempty"`
-	Im *string `json:"IM,omitempty"`
-	Je *string `json:"JE,omitempty"`
-	Me *string `json:"ME,omitempty"`
-	Bl *string `json:"BL,omitempty"`
-	Mf *string `json:"MF,omitempty"`
-	Rs *string `json:"RS,omitempty"`
-	Sx *string `json:"SX,omitempty"`
-	Ss *string `json:"SS,omitempty"`
-	Xk *string `json:"XK,omitempty"`
-}
-
-func (o *Geo) GetAf() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Af
-}
-
-func (o *Geo) GetAl() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Al
-}
-
-func (o *Geo) GetDz() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Dz
-}
-
-func (o *Geo) GetAs() *string {
-	if o == nil {
-		return nil
-	}
-	return o.As
 }
 
 func (o *Geo) GetAd() *string {
@@ -295,25 +267,18 @@ func (o *Geo) GetAd() *string {
 	return o.Ad
 }
 
-func (o *Geo) GetAo() *string {
+func (o *Geo) GetAe() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Ao
+	return o.Ae
 }
 
-func (o *Geo) GetAi() *string {
+func (o *Geo) GetAf() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Ai
-}
-
-func (o *Geo) GetAq() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Aq
+	return o.Af
 }
 
 func (o *Geo) GetAg() *string {
@@ -323,11 +288,18 @@ func (o *Geo) GetAg() *string {
 	return o.Ag
 }
 
-func (o *Geo) GetAr() *string {
+func (o *Geo) GetAi() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Ar
+	return o.Ai
+}
+
+func (o *Geo) GetAl() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Al
 }
 
 func (o *Geo) GetAm() *string {
@@ -337,18 +309,32 @@ func (o *Geo) GetAm() *string {
 	return o.Am
 }
 
-func (o *Geo) GetAw() *string {
+func (o *Geo) GetAo() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Aw
+	return o.Ao
 }
 
-func (o *Geo) GetAu() *string {
+func (o *Geo) GetAq() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Au
+	return o.Aq
+}
+
+func (o *Geo) GetAr() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Ar
+}
+
+func (o *Geo) GetAs() *string {
+	if o == nil {
+		return nil
+	}
+	return o.As
 }
 
 func (o *Geo) GetAt() *string {
@@ -358,88 +344,32 @@ func (o *Geo) GetAt() *string {
 	return o.At
 }
 
+func (o *Geo) GetAu() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Au
+}
+
+func (o *Geo) GetAw() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Aw
+}
+
+func (o *Geo) GetAx() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Ax
+}
+
 func (o *Geo) GetAz() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Az
-}
-
-func (o *Geo) GetBs() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Bs
-}
-
-func (o *Geo) GetBh() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Bh
-}
-
-func (o *Geo) GetBd() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Bd
-}
-
-func (o *Geo) GetBb() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Bb
-}
-
-func (o *Geo) GetBy() *string {
-	if o == nil {
-		return nil
-	}
-	return o.By
-}
-
-func (o *Geo) GetBe() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Be
-}
-
-func (o *Geo) GetBz() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Bz
-}
-
-func (o *Geo) GetBj() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Bj
-}
-
-func (o *Geo) GetBm() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Bm
-}
-
-func (o *Geo) GetBt() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Bt
-}
-
-func (o *Geo) GetBo() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Bo
 }
 
 func (o *Geo) GetBa() *string {
@@ -449,46 +379,25 @@ func (o *Geo) GetBa() *string {
 	return o.Ba
 }
 
-func (o *Geo) GetBw() *string {
+func (o *Geo) GetBb() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Bw
+	return o.Bb
 }
 
-func (o *Geo) GetBv() *string {
+func (o *Geo) GetBd() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Bv
+	return o.Bd
 }
 
-func (o *Geo) GetBr() *string {
+func (o *Geo) GetBe() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Br
-}
-
-func (o *Geo) GetIo() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Io
-}
-
-func (o *Geo) GetBn() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Bn
-}
-
-func (o *Geo) GetBg() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Bg
+	return o.Be
 }
 
 func (o *Geo) GetBf() *string {
@@ -498,6 +407,20 @@ func (o *Geo) GetBf() *string {
 	return o.Bf
 }
 
+func (o *Geo) GetBg() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Bg
+}
+
+func (o *Geo) GetBh() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Bh
+}
+
 func (o *Geo) GetBi() *string {
 	if o == nil {
 		return nil
@@ -505,18 +428,95 @@ func (o *Geo) GetBi() *string {
 	return o.Bi
 }
 
-func (o *Geo) GetKh() *string {
+func (o *Geo) GetBj() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Kh
+	return o.Bj
 }
 
-func (o *Geo) GetCm() *string {
+func (o *Geo) GetBl() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Cm
+	return o.Bl
+}
+
+func (o *Geo) GetBm() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Bm
+}
+
+func (o *Geo) GetBn() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Bn
+}
+
+func (o *Geo) GetBo() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Bo
+}
+
+func (o *Geo) GetBq() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Bq
+}
+
+func (o *Geo) GetBr() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Br
+}
+
+func (o *Geo) GetBs() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Bs
+}
+
+func (o *Geo) GetBt() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Bt
+}
+
+func (o *Geo) GetBv() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Bv
+}
+
+func (o *Geo) GetBw() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Bw
+}
+
+func (o *Geo) GetBy() *string {
+	if o == nil {
+		return nil
+	}
+	return o.By
+}
+
+func (o *Geo) GetBz() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Bz
 }
 
 func (o *Geo) GetCa() *string {
@@ -526,81 +526,11 @@ func (o *Geo) GetCa() *string {
 	return o.Ca
 }
 
-func (o *Geo) GetCv() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Cv
-}
-
-func (o *Geo) GetKy() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Ky
-}
-
-func (o *Geo) GetCf() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Cf
-}
-
-func (o *Geo) GetTd() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Td
-}
-
-func (o *Geo) GetCl() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Cl
-}
-
-func (o *Geo) GetCn() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Cn
-}
-
-func (o *Geo) GetCx() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Cx
-}
-
 func (o *Geo) GetCc() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Cc
-}
-
-func (o *Geo) GetCo() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Co
-}
-
-func (o *Geo) GetKm() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Km
-}
-
-func (o *Geo) GetCg() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Cg
 }
 
 func (o *Geo) GetCd() *string {
@@ -610,18 +540,25 @@ func (o *Geo) GetCd() *string {
 	return o.Cd
 }
 
-func (o *Geo) GetCk() *string {
+func (o *Geo) GetCf() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Ck
+	return o.Cf
 }
 
-func (o *Geo) GetCr() *string {
+func (o *Geo) GetCg() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Cr
+	return o.Cg
+}
+
+func (o *Geo) GetCh() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Ch
 }
 
 func (o *Geo) GetCi() *string {
@@ -631,11 +568,46 @@ func (o *Geo) GetCi() *string {
 	return o.Ci
 }
 
-func (o *Geo) GetHr() *string {
+func (o *Geo) GetCk() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Hr
+	return o.Ck
+}
+
+func (o *Geo) GetCl() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Cl
+}
+
+func (o *Geo) GetCm() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Cm
+}
+
+func (o *Geo) GetCn() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Cn
+}
+
+func (o *Geo) GetCo() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Co
+}
+
+func (o *Geo) GetCr() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Cr
 }
 
 func (o *Geo) GetCu() *string {
@@ -643,6 +615,27 @@ func (o *Geo) GetCu() *string {
 		return nil
 	}
 	return o.Cu
+}
+
+func (o *Geo) GetCv() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Cv
+}
+
+func (o *Geo) GetCw() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Cw
+}
+
+func (o *Geo) GetCx() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Cx
 }
 
 func (o *Geo) GetCy() *string {
@@ -659,11 +652,11 @@ func (o *Geo) GetCz() *string {
 	return o.Cz
 }
 
-func (o *Geo) GetDk() *string {
+func (o *Geo) GetDe() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Dk
+	return o.De
 }
 
 func (o *Geo) GetDj() *string {
@@ -671,6 +664,13 @@ func (o *Geo) GetDj() *string {
 		return nil
 	}
 	return o.Dj
+}
+
+func (o *Geo) GetDk() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Dk
 }
 
 func (o *Geo) GetDm() *string {
@@ -687,39 +687,18 @@ func (o *Geo) GetDo() *string {
 	return o.Do
 }
 
+func (o *Geo) GetDz() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Dz
+}
+
 func (o *Geo) GetEc() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Ec
-}
-
-func (o *Geo) GetEg() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Eg
-}
-
-func (o *Geo) GetSv() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Sv
-}
-
-func (o *Geo) GetGq() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Gq
-}
-
-func (o *Geo) GetEr() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Er
 }
 
 func (o *Geo) GetEe() *string {
@@ -729,32 +708,39 @@ func (o *Geo) GetEe() *string {
 	return o.Ee
 }
 
+func (o *Geo) GetEg() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Eg
+}
+
+func (o *Geo) GetEh() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Eh
+}
+
+func (o *Geo) GetEr() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Er
+}
+
+func (o *Geo) GetEs() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Es
+}
+
 func (o *Geo) GetEt() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Et
-}
-
-func (o *Geo) GetFk() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Fk
-}
-
-func (o *Geo) GetFo() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Fo
-}
-
-func (o *Geo) GetFj() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Fj
 }
 
 func (o *Geo) GetFi() *string {
@@ -764,32 +750,39 @@ func (o *Geo) GetFi() *string {
 	return o.Fi
 }
 
+func (o *Geo) GetFj() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Fj
+}
+
+func (o *Geo) GetFk() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Fk
+}
+
+func (o *Geo) GetFm() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Fm
+}
+
+func (o *Geo) GetFo() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Fo
+}
+
 func (o *Geo) GetFr() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Fr
-}
-
-func (o *Geo) GetGf() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Gf
-}
-
-func (o *Geo) GetPf() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Pf
-}
-
-func (o *Geo) GetTf() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Tf
 }
 
 func (o *Geo) GetGa() *string {
@@ -799,11 +792,18 @@ func (o *Geo) GetGa() *string {
 	return o.Ga
 }
 
-func (o *Geo) GetGm() *string {
+func (o *Geo) GetGb() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Gm
+	return o.Gb
+}
+
+func (o *Geo) GetGd() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Gd
 }
 
 func (o *Geo) GetGe() *string {
@@ -813,11 +813,18 @@ func (o *Geo) GetGe() *string {
 	return o.Ge
 }
 
-func (o *Geo) GetDe() *string {
+func (o *Geo) GetGf() *string {
 	if o == nil {
 		return nil
 	}
-	return o.De
+	return o.Gf
+}
+
+func (o *Geo) GetGg() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Gg
 }
 
 func (o *Geo) GetGh() *string {
@@ -834,13 +841,6 @@ func (o *Geo) GetGi() *string {
 	return o.Gi
 }
 
-func (o *Geo) GetGr() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Gr
-}
-
 func (o *Geo) GetGl() *string {
 	if o == nil {
 		return nil
@@ -848,11 +848,18 @@ func (o *Geo) GetGl() *string {
 	return o.Gl
 }
 
-func (o *Geo) GetGd() *string {
+func (o *Geo) GetGm() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Gd
+	return o.Gm
+}
+
+func (o *Geo) GetGn() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Gn
 }
 
 func (o *Geo) GetGp() *string {
@@ -862,11 +869,25 @@ func (o *Geo) GetGp() *string {
 	return o.Gp
 }
 
-func (o *Geo) GetGu() *string {
+func (o *Geo) GetGq() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Gu
+	return o.Gq
+}
+
+func (o *Geo) GetGr() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Gr
+}
+
+func (o *Geo) GetGs() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Gs
 }
 
 func (o *Geo) GetGt() *string {
@@ -876,11 +897,11 @@ func (o *Geo) GetGt() *string {
 	return o.Gt
 }
 
-func (o *Geo) GetGn() *string {
+func (o *Geo) GetGu() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Gn
+	return o.Gu
 }
 
 func (o *Geo) GetGw() *string {
@@ -897,11 +918,11 @@ func (o *Geo) GetGy() *string {
 	return o.Gy
 }
 
-func (o *Geo) GetHt() *string {
+func (o *Geo) GetHk() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Ht
+	return o.Hk
 }
 
 func (o *Geo) GetHm() *string {
@@ -911,13 +932,6 @@ func (o *Geo) GetHm() *string {
 	return o.Hm
 }
 
-func (o *Geo) GetVa() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Va
-}
-
 func (o *Geo) GetHn() *string {
 	if o == nil {
 		return nil
@@ -925,11 +939,18 @@ func (o *Geo) GetHn() *string {
 	return o.Hn
 }
 
-func (o *Geo) GetHk() *string {
+func (o *Geo) GetHr() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Hk
+	return o.Hr
+}
+
+func (o *Geo) GetHt() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Ht
 }
 
 func (o *Geo) GetHu() *string {
@@ -939,39 +960,11 @@ func (o *Geo) GetHu() *string {
 	return o.Hu
 }
 
-func (o *Geo) GetIs() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Is
-}
-
-func (o *Geo) GetIn() *string {
-	if o == nil {
-		return nil
-	}
-	return o.In
-}
-
 func (o *Geo) GetID() *string {
 	if o == nil {
 		return nil
 	}
 	return o.ID
-}
-
-func (o *Geo) GetIr() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Ir
-}
-
-func (o *Geo) GetIq() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Iq
 }
 
 func (o *Geo) GetIe() *string {
@@ -988,11 +981,60 @@ func (o *Geo) GetIl() *string {
 	return o.Il
 }
 
+func (o *Geo) GetIm() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Im
+}
+
+func (o *Geo) GetIn() *string {
+	if o == nil {
+		return nil
+	}
+	return o.In
+}
+
+func (o *Geo) GetIo() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Io
+}
+
+func (o *Geo) GetIq() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Iq
+}
+
+func (o *Geo) GetIr() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Ir
+}
+
+func (o *Geo) GetIs() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Is
+}
+
 func (o *Geo) GetIt() *string {
 	if o == nil {
 		return nil
 	}
 	return o.It
+}
+
+func (o *Geo) GetJe() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Je
 }
 
 func (o *Geo) GetJm() *string {
@@ -1002,13 +1044,6 @@ func (o *Geo) GetJm() *string {
 	return o.Jm
 }
 
-func (o *Geo) GetJp() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Jp
-}
-
 func (o *Geo) GetJo() *string {
 	if o == nil {
 		return nil
@@ -1016,11 +1051,11 @@ func (o *Geo) GetJo() *string {
 	return o.Jo
 }
 
-func (o *Geo) GetKz() *string {
+func (o *Geo) GetJp() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Kz
+	return o.Jp
 }
 
 func (o *Geo) GetKe() *string {
@@ -1030,11 +1065,39 @@ func (o *Geo) GetKe() *string {
 	return o.Ke
 }
 
+func (o *Geo) GetKg() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Kg
+}
+
+func (o *Geo) GetKh() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Kh
+}
+
 func (o *Geo) GetKi() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Ki
+}
+
+func (o *Geo) GetKm() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Km
+}
+
+func (o *Geo) GetKn() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Kn
 }
 
 func (o *Geo) GetKp() *string {
@@ -1058,11 +1121,18 @@ func (o *Geo) GetKw() *string {
 	return o.Kw
 }
 
-func (o *Geo) GetKg() *string {
+func (o *Geo) GetKy() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Kg
+	return o.Ky
+}
+
+func (o *Geo) GetKz() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Kz
 }
 
 func (o *Geo) GetLa() *string {
@@ -1072,13 +1142,6 @@ func (o *Geo) GetLa() *string {
 	return o.La
 }
 
-func (o *Geo) GetLv() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Lv
-}
-
 func (o *Geo) GetLb() *string {
 	if o == nil {
 		return nil
@@ -1086,11 +1149,25 @@ func (o *Geo) GetLb() *string {
 	return o.Lb
 }
 
-func (o *Geo) GetLs() *string {
+func (o *Geo) GetLc() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Ls
+	return o.Lc
+}
+
+func (o *Geo) GetLi() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Li
+}
+
+func (o *Geo) GetLk() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Lk
 }
 
 func (o *Geo) GetLr() *string {
@@ -1100,18 +1177,11 @@ func (o *Geo) GetLr() *string {
 	return o.Lr
 }
 
-func (o *Geo) GetLy() *string {
+func (o *Geo) GetLs() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Ly
-}
-
-func (o *Geo) GetLi() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Li
+	return o.Ls
 }
 
 func (o *Geo) GetLt() *string {
@@ -1128,11 +1198,53 @@ func (o *Geo) GetLu() *string {
 	return o.Lu
 }
 
-func (o *Geo) GetMo() *string {
+func (o *Geo) GetLv() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Mo
+	return o.Lv
+}
+
+func (o *Geo) GetLy() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Ly
+}
+
+func (o *Geo) GetMa() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Ma
+}
+
+func (o *Geo) GetMc() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Mc
+}
+
+func (o *Geo) GetMd() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Md
+}
+
+func (o *Geo) GetMe() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Me
+}
+
+func (o *Geo) GetMf() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Mf
 }
 
 func (o *Geo) GetMg() *string {
@@ -1142,25 +1254,18 @@ func (o *Geo) GetMg() *string {
 	return o.Mg
 }
 
-func (o *Geo) GetMw() *string {
+func (o *Geo) GetMh() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Mw
+	return o.Mh
 }
 
-func (o *Geo) GetMy() *string {
+func (o *Geo) GetMk() *string {
 	if o == nil {
 		return nil
 	}
-	return o.My
-}
-
-func (o *Geo) GetMv() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Mv
+	return o.Mk
 }
 
 func (o *Geo) GetMl() *string {
@@ -1170,18 +1275,32 @@ func (o *Geo) GetMl() *string {
 	return o.Ml
 }
 
-func (o *Geo) GetMt() *string {
+func (o *Geo) GetMm() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Mt
+	return o.Mm
 }
 
-func (o *Geo) GetMh() *string {
+func (o *Geo) GetMn() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Mh
+	return o.Mn
+}
+
+func (o *Geo) GetMo() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Mo
+}
+
+func (o *Geo) GetMp() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Mp
 }
 
 func (o *Geo) GetMq() *string {
@@ -1198,6 +1317,20 @@ func (o *Geo) GetMr() *string {
 	return o.Mr
 }
 
+func (o *Geo) GetMs() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Ms
+}
+
+func (o *Geo) GetMt() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Mt
+}
+
 func (o *Geo) GetMu() *string {
 	if o == nil {
 		return nil
@@ -1205,11 +1338,18 @@ func (o *Geo) GetMu() *string {
 	return o.Mu
 }
 
-func (o *Geo) GetYt() *string {
+func (o *Geo) GetMv() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Yt
+	return o.Mv
+}
+
+func (o *Geo) GetMw() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Mw
 }
 
 func (o *Geo) GetMx() *string {
@@ -1219,46 +1359,11 @@ func (o *Geo) GetMx() *string {
 	return o.Mx
 }
 
-func (o *Geo) GetFm() *string {
+func (o *Geo) GetMy() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Fm
-}
-
-func (o *Geo) GetMd() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Md
-}
-
-func (o *Geo) GetMc() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Mc
-}
-
-func (o *Geo) GetMn() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Mn
-}
-
-func (o *Geo) GetMs() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Ms
-}
-
-func (o *Geo) GetMa() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Ma
+	return o.My
 }
 
 func (o *Geo) GetMz() *string {
@@ -1268,39 +1373,11 @@ func (o *Geo) GetMz() *string {
 	return o.Mz
 }
 
-func (o *Geo) GetMm() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Mm
-}
-
 func (o *Geo) GetNa() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Na
-}
-
-func (o *Geo) GetNr() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Nr
-}
-
-func (o *Geo) GetNp() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Np
-}
-
-func (o *Geo) GetNl() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Nl
 }
 
 func (o *Geo) GetNc() *string {
@@ -1310,39 +1387,11 @@ func (o *Geo) GetNc() *string {
 	return o.Nc
 }
 
-func (o *Geo) GetNz() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Nz
-}
-
-func (o *Geo) GetNi() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Ni
-}
-
 func (o *Geo) GetNe() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Ne
-}
-
-func (o *Geo) GetNg() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Ng
-}
-
-func (o *Geo) GetNu() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Nu
 }
 
 func (o *Geo) GetNf() *string {
@@ -1352,18 +1401,25 @@ func (o *Geo) GetNf() *string {
 	return o.Nf
 }
 
-func (o *Geo) GetMk() *string {
+func (o *Geo) GetNg() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Mk
+	return o.Ng
 }
 
-func (o *Geo) GetMp() *string {
+func (o *Geo) GetNi() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Mp
+	return o.Ni
+}
+
+func (o *Geo) GetNl() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Nl
 }
 
 func (o *Geo) GetNo() *string {
@@ -1373,32 +1429,39 @@ func (o *Geo) GetNo() *string {
 	return o.No
 }
 
+func (o *Geo) GetNp() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Np
+}
+
+func (o *Geo) GetNr() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Nr
+}
+
+func (o *Geo) GetNu() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Nu
+}
+
+func (o *Geo) GetNz() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Nz
+}
+
 func (o *Geo) GetOm() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Om
-}
-
-func (o *Geo) GetPk() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Pk
-}
-
-func (o *Geo) GetPw() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Pw
-}
-
-func (o *Geo) GetPs() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Ps
 }
 
 func (o *Geo) GetPa() *string {
@@ -1408,25 +1471,25 @@ func (o *Geo) GetPa() *string {
 	return o.Pa
 }
 
-func (o *Geo) GetPg() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Pg
-}
-
-func (o *Geo) GetPy() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Py
-}
-
 func (o *Geo) GetPe() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Pe
+}
+
+func (o *Geo) GetPf() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Pf
+}
+
+func (o *Geo) GetPg() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Pg
 }
 
 func (o *Geo) GetPh() *string {
@@ -1436,11 +1499,11 @@ func (o *Geo) GetPh() *string {
 	return o.Ph
 }
 
-func (o *Geo) GetPn() *string {
+func (o *Geo) GetPk() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Pn
+	return o.Pk
 }
 
 func (o *Geo) GetPl() *string {
@@ -1450,11 +1513,18 @@ func (o *Geo) GetPl() *string {
 	return o.Pl
 }
 
-func (o *Geo) GetPt() *string {
+func (o *Geo) GetPm() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Pt
+	return o.Pm
+}
+
+func (o *Geo) GetPn() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Pn
 }
 
 func (o *Geo) GetPr() *string {
@@ -1462,6 +1532,34 @@ func (o *Geo) GetPr() *string {
 		return nil
 	}
 	return o.Pr
+}
+
+func (o *Geo) GetPs() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Ps
+}
+
+func (o *Geo) GetPt() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Pt
+}
+
+func (o *Geo) GetPw() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Pw
+}
+
+func (o *Geo) GetPy() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Py
 }
 
 func (o *Geo) GetQa() *string {
@@ -1485,6 +1583,13 @@ func (o *Geo) GetRo() *string {
 	return o.Ro
 }
 
+func (o *Geo) GetRs() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Rs
+}
+
 func (o *Geo) GetRu() *string {
 	if o == nil {
 		return nil
@@ -1499,109 +1604,11 @@ func (o *Geo) GetRw() *string {
 	return o.Rw
 }
 
-func (o *Geo) GetSh() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Sh
-}
-
-func (o *Geo) GetKn() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Kn
-}
-
-func (o *Geo) GetLc() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Lc
-}
-
-func (o *Geo) GetPm() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Pm
-}
-
-func (o *Geo) GetVc() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Vc
-}
-
-func (o *Geo) GetWs() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Ws
-}
-
-func (o *Geo) GetSm() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Sm
-}
-
-func (o *Geo) GetSt() *string {
-	if o == nil {
-		return nil
-	}
-	return o.St
-}
-
 func (o *Geo) GetSa() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Sa
-}
-
-func (o *Geo) GetSn() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Sn
-}
-
-func (o *Geo) GetSc() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Sc
-}
-
-func (o *Geo) GetSl() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Sl
-}
-
-func (o *Geo) GetSg() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Sg
-}
-
-func (o *Geo) GetSk() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Sk
-}
-
-func (o *Geo) GetSi() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Si
 }
 
 func (o *Geo) GetSb() *string {
@@ -1611,39 +1618,11 @@ func (o *Geo) GetSb() *string {
 	return o.Sb
 }
 
-func (o *Geo) GetSo() *string {
+func (o *Geo) GetSc() *string {
 	if o == nil {
 		return nil
 	}
-	return o.So
-}
-
-func (o *Geo) GetZa() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Za
-}
-
-func (o *Geo) GetGs() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Gs
-}
-
-func (o *Geo) GetEs() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Es
-}
-
-func (o *Geo) GetLk() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Lk
+	return o.Sc
 }
 
 func (o *Geo) GetSd() *string {
@@ -1653,11 +1632,32 @@ func (o *Geo) GetSd() *string {
 	return o.Sd
 }
 
-func (o *Geo) GetSr() *string {
+func (o *Geo) GetSe() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Sr
+	return o.Se
+}
+
+func (o *Geo) GetSg() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Sg
+}
+
+func (o *Geo) GetSh() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Sh
+}
+
+func (o *Geo) GetSi() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Si
 }
 
 func (o *Geo) GetSj() *string {
@@ -1667,25 +1667,74 @@ func (o *Geo) GetSj() *string {
 	return o.Sj
 }
 
-func (o *Geo) GetSz() *string {
+func (o *Geo) GetSk() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Sz
+	return o.Sk
 }
 
-func (o *Geo) GetSe() *string {
+func (o *Geo) GetSl() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Se
+	return o.Sl
 }
 
-func (o *Geo) GetCh() *string {
+func (o *Geo) GetSm() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Ch
+	return o.Sm
+}
+
+func (o *Geo) GetSn() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Sn
+}
+
+func (o *Geo) GetSo() *string {
+	if o == nil {
+		return nil
+	}
+	return o.So
+}
+
+func (o *Geo) GetSr() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Sr
+}
+
+func (o *Geo) GetSs() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Ss
+}
+
+func (o *Geo) GetSt() *string {
+	if o == nil {
+		return nil
+	}
+	return o.St
+}
+
+func (o *Geo) GetSv() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Sv
+}
+
+func (o *Geo) GetSx() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Sx
 }
 
 func (o *Geo) GetSy() *string {
@@ -1695,88 +1744,11 @@ func (o *Geo) GetSy() *string {
 	return o.Sy
 }
 
-func (o *Geo) GetTw() *string {
+func (o *Geo) GetSz() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Tw
-}
-
-func (o *Geo) GetTj() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Tj
-}
-
-func (o *Geo) GetTz() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Tz
-}
-
-func (o *Geo) GetTh() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Th
-}
-
-func (o *Geo) GetTl() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Tl
-}
-
-func (o *Geo) GetTg() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Tg
-}
-
-func (o *Geo) GetTk() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Tk
-}
-
-func (o *Geo) GetTo() *string {
-	if o == nil {
-		return nil
-	}
-	return o.To
-}
-
-func (o *Geo) GetTt() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Tt
-}
-
-func (o *Geo) GetTn() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Tn
-}
-
-func (o *Geo) GetTr() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Tr
-}
-
-func (o *Geo) GetTm() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Tm
+	return o.Sz
 }
 
 func (o *Geo) GetTc() *string {
@@ -1786,6 +1758,90 @@ func (o *Geo) GetTc() *string {
 	return o.Tc
 }
 
+func (o *Geo) GetTd() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Td
+}
+
+func (o *Geo) GetTf() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Tf
+}
+
+func (o *Geo) GetTg() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Tg
+}
+
+func (o *Geo) GetTh() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Th
+}
+
+func (o *Geo) GetTj() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Tj
+}
+
+func (o *Geo) GetTk() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Tk
+}
+
+func (o *Geo) GetTl() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Tl
+}
+
+func (o *Geo) GetTm() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Tm
+}
+
+func (o *Geo) GetTn() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Tn
+}
+
+func (o *Geo) GetTo() *string {
+	if o == nil {
+		return nil
+	}
+	return o.To
+}
+
+func (o *Geo) GetTr() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Tr
+}
+
+func (o *Geo) GetTt() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Tt
+}
+
 func (o *Geo) GetTv() *string {
 	if o == nil {
 		return nil
@@ -1793,11 +1849,18 @@ func (o *Geo) GetTv() *string {
 	return o.Tv
 }
 
-func (o *Geo) GetUg() *string {
+func (o *Geo) GetTw() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Ug
+	return o.Tw
+}
+
+func (o *Geo) GetTz() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Tz
 }
 
 func (o *Geo) GetUa() *string {
@@ -1807,25 +1870,11 @@ func (o *Geo) GetUa() *string {
 	return o.Ua
 }
 
-func (o *Geo) GetAe() *string {
+func (o *Geo) GetUg() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Ae
-}
-
-func (o *Geo) GetGb() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Gb
-}
-
-func (o *Geo) GetUs() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Us
+	return o.Ug
 }
 
 func (o *Geo) GetUm() *string {
@@ -1833,6 +1882,13 @@ func (o *Geo) GetUm() *string {
 		return nil
 	}
 	return o.Um
+}
+
+func (o *Geo) GetUs() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Us
 }
 
 func (o *Geo) GetUy() *string {
@@ -1849,11 +1905,18 @@ func (o *Geo) GetUz() *string {
 	return o.Uz
 }
 
-func (o *Geo) GetVu() *string {
+func (o *Geo) GetVa() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Vu
+	return o.Va
+}
+
+func (o *Geo) GetVc() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Vc
 }
 
 func (o *Geo) GetVe() *string {
@@ -1861,13 +1924,6 @@ func (o *Geo) GetVe() *string {
 		return nil
 	}
 	return o.Ve
-}
-
-func (o *Geo) GetVn() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Vn
 }
 
 func (o *Geo) GetVg() *string {
@@ -1884,6 +1940,20 @@ func (o *Geo) GetVi() *string {
 	return o.Vi
 }
 
+func (o *Geo) GetVn() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Vn
+}
+
+func (o *Geo) GetVu() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Vu
+}
+
 func (o *Geo) GetWf() *string {
 	if o == nil {
 		return nil
@@ -1891,11 +1961,18 @@ func (o *Geo) GetWf() *string {
 	return o.Wf
 }
 
-func (o *Geo) GetEh() *string {
+func (o *Geo) GetWs() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Eh
+	return o.Ws
+}
+
+func (o *Geo) GetXk() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Xk
 }
 
 func (o *Geo) GetYe() *string {
@@ -1903,6 +1980,20 @@ func (o *Geo) GetYe() *string {
 		return nil
 	}
 	return o.Ye
+}
+
+func (o *Geo) GetYt() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Yt
+}
+
+func (o *Geo) GetZa() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Za
 }
 
 func (o *Geo) GetZm() *string {
@@ -1919,180 +2010,89 @@ func (o *Geo) GetZw() *string {
 	return o.Zw
 }
 
-func (o *Geo) GetAx() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Ax
-}
-
-func (o *Geo) GetBq() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Bq
-}
-
-func (o *Geo) GetCw() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Cw
-}
-
-func (o *Geo) GetGg() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Gg
-}
-
-func (o *Geo) GetIm() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Im
-}
-
-func (o *Geo) GetJe() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Je
-}
-
-func (o *Geo) GetMe() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Me
-}
-
-func (o *Geo) GetBl() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Bl
-}
-
-func (o *Geo) GetMf() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Mf
-}
-
-func (o *Geo) GetRs() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Rs
-}
-
-func (o *Geo) GetSx() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Sx
-}
-
-func (o *Geo) GetSs() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Ss
-}
-
-func (o *Geo) GetXk() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Xk
-}
-
 type LinkSchema struct {
-	// The unique ID of the short link.
-	ID string `json:"id"`
-	// The domain of the short link. If not provided, the primary domain for the workspace will be used (or `dub.sh` if the workspace has no domains).
-	Domain string `json:"domain"`
-	// The short link slug. If not provided, a random 7-character slug will be generated.
-	Key string `json:"key"`
-	// This is the ID of the link in your database. If set, it can be used to identify the link in the future. Must be prefixed with 'ext_' when passed as a query parameter.
-	ExternalID *string `json:"externalId"`
-	// The destination URL of the short link.
-	URL string `json:"url"`
-	// [BETA] Whether to track conversions for the short link.
-	TrackConversion *bool `default:"false" json:"trackConversion"`
-	// Whether the short link is archived.
-	Archived *bool `default:"false" json:"archived"`
-	// The date and time when the short link will expire in ISO-8601 format.
-	ExpiresAt *string `json:"expiresAt"`
-	// The URL to redirect to when the short link has expired.
-	ExpiredURL *string `json:"expiredUrl"`
-	// The password required to access the destination URL of the short link.
-	Password *string `json:"password"`
-	// Whether the short link uses Custom Social Media Cards feature.
-	Proxy *bool `default:"false" json:"proxy"`
-	// The title of the short link generated via `api.dub.co/metatags`. Will be used for Custom Social Media Cards if `proxy` is true.
-	Title *string `json:"title"`
-	// The description of the short link generated via `api.dub.co/metatags`. Will be used for Custom Social Media Cards if `proxy` is true.
-	Description *string `json:"description"`
-	// The image of the short link generated via `api.dub.co/metatags`. Will be used for Custom Social Media Cards if `proxy` is true.
-	Image *string `json:"image"`
-	// Whether the short link uses link cloaking.
-	Rewrite *bool `default:"false" json:"rewrite"`
-	// Whether to allow search engines to index the short link.
-	DoIndex *bool `default:"false" json:"doIndex"`
-	// The iOS destination URL for the short link for iOS device targeting.
-	Ios *string `json:"ios"`
 	// The Android destination URL for the short link for Android device targeting.
 	Android *string `json:"android"`
+	// Whether the short link is archived.
+	Archived *bool `default:"false" json:"archived"`
+	// The number of clicks on the short link.
+	Clicks *float64 `default:"0" json:"clicks"`
+	// The comments for the short link.
+	Comments *string `json:"comments"`
+	// The date and time when the short link was created.
+	CreatedAt string `json:"createdAt"`
+	// The description of the short link generated via `api.dub.co/metatags`. Will be used for Custom Social Media Cards if `proxy` is true.
+	Description *string `json:"description"`
+	// Whether to allow search engines to index the short link.
+	DoIndex *bool `default:"false" json:"doIndex"`
+	// The domain of the short link. If not provided, the primary domain for the workspace will be used (or `dub.sh` if the workspace has no domains).
+	Domain string `json:"domain"`
+	// The URL to redirect to when the short link has expired.
+	ExpiredURL *string `json:"expiredUrl"`
+	// The date and time when the short link will expire in ISO-8601 format.
+	ExpiresAt *string `json:"expiresAt"`
+	// This is the ID of the link in your database. If set, it can be used to identify the link in the future. Must be prefixed with 'ext_' when passed as a query parameter.
+	ExternalID *string `json:"externalId"`
 	// Geo targeting information for the short link in JSON format `{[COUNTRY]: https://example.com }`. Learn more: https://d.to/geo
 	Geo *Geo `json:"geo"`
+	// The unique ID of the short link.
+	ID string `json:"id"`
+	// The image of the short link generated via `api.dub.co/metatags`. Will be used for Custom Social Media Cards if `proxy` is true.
+	Image *string `json:"image"`
+	// The iOS destination URL for the short link for iOS device targeting.
+	Ios *string `json:"ios"`
+	// The short link slug. If not provided, a random 7-character slug will be generated.
+	Key string `json:"key"`
+	// The date and time when the short link was last clicked.
+	LastClicked *string `json:"lastClicked"`
+	// [BETA]: The number of leads the short links has generated.
+	Leads *float64 `default:"0" json:"leads"`
+	// The password required to access the destination URL of the short link.
+	Password *string `json:"password"`
+	// The project ID of the short link. This field is deprecated – use `workspaceId` instead.
+	//
+	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+	ProjectID string `json:"projectId"`
+	// Whether the short link uses Custom Social Media Cards feature.
+	Proxy *bool `default:"false" json:"proxy"`
 	// Whether the short link's stats are publicly accessible.
 	PublicStats *bool `default:"false" json:"publicStats"`
+	// The full URL of the QR code for the short link (e.g. `https://api.dub.co/qr?url=https://dub.sh/try`).
+	QrCode string `json:"qrCode"`
+	// Whether the short link uses link cloaking.
+	Rewrite *bool `default:"false" json:"rewrite"`
+	// [BETA]: The number of sales the short links has generated.
+	Sales *float64 `default:"0" json:"sales"`
+	// The full URL of the short link, including the https protocol (e.g. `https://dub.sh/try`).
+	ShortLink string `json:"shortLink"`
 	// The unique ID of the tag assigned to the short link. This field is deprecated – use `tags` instead.
 	//
 	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
 	TagID *string `json:"tagId"`
 	// The tags assigned to the short link.
 	Tags []TagSchema `json:"tags"`
-	// The comments for the short link.
-	Comments *string `json:"comments"`
-	// The full URL of the short link, including the https protocol (e.g. `https://dub.sh/try`).
-	ShortLink string `json:"shortLink"`
-	// The full URL of the QR code for the short link (e.g. `https://api.dub.co/qr?url=https://dub.sh/try`).
-	QrCode string `json:"qrCode"`
-	// The UTM source of the short link.
-	UtmSource *string `json:"utm_source"`
-	// The UTM medium of the short link.
-	UtmMedium *string `json:"utm_medium"`
-	// The UTM campaign of the short link.
-	UtmCampaign *string `json:"utm_campaign"`
-	// The UTM term of the short link.
-	UtmTerm *string `json:"utm_term"`
-	// The UTM content of the short link.
-	UtmContent *string `json:"utm_content"`
-	// The user ID of the creator of the short link.
-	UserID string `json:"userId"`
-	// The workspace ID of the short link.
-	WorkspaceID string `json:"workspaceId"`
-	// The number of clicks on the short link.
-	Clicks *float64 `default:"0" json:"clicks"`
-	// The date and time when the short link was last clicked.
-	LastClicked *string `json:"lastClicked"`
-	// [BETA]: The number of leads the short links has generated.
-	Leads *float64 `default:"0" json:"leads"`
-	// [BETA]: The number of sales the short links has generated.
-	Sales *float64 `default:"0" json:"sales"`
-	// The date and time when the short link was created.
-	CreatedAt string `json:"createdAt"`
+	// The title of the short link generated via `api.dub.co/metatags`. Will be used for Custom Social Media Cards if `proxy` is true.
+	Title *string `json:"title"`
+	// [BETA] Whether to track conversions for the short link.
+	TrackConversion *bool `default:"false" json:"trackConversion"`
 	// The date and time when the short link was last updated.
 	UpdatedAt string `json:"updatedAt"`
-	// The project ID of the short link. This field is deprecated – use `workspaceId` instead.
-	//
-	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
-	ProjectID string `json:"projectId"`
+	// The destination URL of the short link.
+	URL string `json:"url"`
+	// The user ID of the creator of the short link.
+	UserID string `json:"userId"`
+	// The UTM campaign of the short link.
+	UtmCampaign *string `json:"utm_campaign"`
+	// The UTM content of the short link.
+	UtmContent *string `json:"utm_content"`
+	// The UTM medium of the short link.
+	UtmMedium *string `json:"utm_medium"`
+	// The UTM source of the short link.
+	UtmSource *string `json:"utm_source"`
+	// The UTM term of the short link.
+	UtmTerm *string `json:"utm_term"`
+	// The workspace ID of the short link.
+	WorkspaceID string `json:"workspaceId"`
 }
 
 func (l LinkSchema) MarshalJSON() ([]byte, error) {
@@ -2106,46 +2106,11 @@ func (l *LinkSchema) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *LinkSchema) GetID() string {
-	if o == nil {
-		return ""
-	}
-	return o.ID
-}
-
-func (o *LinkSchema) GetDomain() string {
-	if o == nil {
-		return ""
-	}
-	return o.Domain
-}
-
-func (o *LinkSchema) GetKey() string {
-	if o == nil {
-		return ""
-	}
-	return o.Key
-}
-
-func (o *LinkSchema) GetExternalID() *string {
+func (o *LinkSchema) GetAndroid() *string {
 	if o == nil {
 		return nil
 	}
-	return o.ExternalID
-}
-
-func (o *LinkSchema) GetURL() string {
-	if o == nil {
-		return ""
-	}
-	return o.URL
-}
-
-func (o *LinkSchema) GetTrackConversion() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.TrackConversion
+	return o.Android
 }
 
 func (o *LinkSchema) GetArchived() *bool {
@@ -2155,109 +2120,11 @@ func (o *LinkSchema) GetArchived() *bool {
 	return o.Archived
 }
 
-func (o *LinkSchema) GetExpiresAt() *string {
+func (o *LinkSchema) GetClicks() *float64 {
 	if o == nil {
 		return nil
 	}
-	return o.ExpiresAt
-}
-
-func (o *LinkSchema) GetExpiredURL() *string {
-	if o == nil {
-		return nil
-	}
-	return o.ExpiredURL
-}
-
-func (o *LinkSchema) GetPassword() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Password
-}
-
-func (o *LinkSchema) GetProxy() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.Proxy
-}
-
-func (o *LinkSchema) GetTitle() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Title
-}
-
-func (o *LinkSchema) GetDescription() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Description
-}
-
-func (o *LinkSchema) GetImage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Image
-}
-
-func (o *LinkSchema) GetRewrite() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.Rewrite
-}
-
-func (o *LinkSchema) GetDoIndex() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.DoIndex
-}
-
-func (o *LinkSchema) GetIos() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Ios
-}
-
-func (o *LinkSchema) GetAndroid() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Android
-}
-
-func (o *LinkSchema) GetGeo() *Geo {
-	if o == nil {
-		return nil
-	}
-	return o.Geo
-}
-
-func (o *LinkSchema) GetPublicStats() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.PublicStats
-}
-
-func (o *LinkSchema) GetTagID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.TagID
-}
-
-func (o *LinkSchema) GetTags() []TagSchema {
-	if o == nil {
-		return nil
-	}
-	return o.Tags
+	return o.Clicks
 }
 
 func (o *LinkSchema) GetComments() *string {
@@ -2267,74 +2134,88 @@ func (o *LinkSchema) GetComments() *string {
 	return o.Comments
 }
 
-func (o *LinkSchema) GetShortLink() string {
+func (o *LinkSchema) GetCreatedAt() string {
 	if o == nil {
 		return ""
 	}
-	return o.ShortLink
+	return o.CreatedAt
 }
 
-func (o *LinkSchema) GetQrCode() string {
+func (o *LinkSchema) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *LinkSchema) GetDoIndex() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.DoIndex
+}
+
+func (o *LinkSchema) GetDomain() string {
 	if o == nil {
 		return ""
 	}
-	return o.QrCode
+	return o.Domain
 }
 
-func (o *LinkSchema) GetUtmSource() *string {
+func (o *LinkSchema) GetExpiredURL() *string {
 	if o == nil {
 		return nil
 	}
-	return o.UtmSource
+	return o.ExpiredURL
 }
 
-func (o *LinkSchema) GetUtmMedium() *string {
+func (o *LinkSchema) GetExpiresAt() *string {
 	if o == nil {
 		return nil
 	}
-	return o.UtmMedium
+	return o.ExpiresAt
 }
 
-func (o *LinkSchema) GetUtmCampaign() *string {
+func (o *LinkSchema) GetExternalID() *string {
 	if o == nil {
 		return nil
 	}
-	return o.UtmCampaign
+	return o.ExternalID
 }
 
-func (o *LinkSchema) GetUtmTerm() *string {
+func (o *LinkSchema) GetGeo() *Geo {
 	if o == nil {
 		return nil
 	}
-	return o.UtmTerm
+	return o.Geo
 }
 
-func (o *LinkSchema) GetUtmContent() *string {
-	if o == nil {
-		return nil
-	}
-	return o.UtmContent
-}
-
-func (o *LinkSchema) GetUserID() string {
+func (o *LinkSchema) GetID() string {
 	if o == nil {
 		return ""
 	}
-	return o.UserID
+	return o.ID
 }
 
-func (o *LinkSchema) GetWorkspaceID() string {
-	if o == nil {
-		return ""
-	}
-	return o.WorkspaceID
-}
-
-func (o *LinkSchema) GetClicks() *float64 {
+func (o *LinkSchema) GetImage() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Clicks
+	return o.Image
+}
+
+func (o *LinkSchema) GetIos() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Ios
+}
+
+func (o *LinkSchema) GetKey() string {
+	if o == nil {
+		return ""
+	}
+	return o.Key
 }
 
 func (o *LinkSchema) GetLastClicked() *string {
@@ -2351,6 +2232,48 @@ func (o *LinkSchema) GetLeads() *float64 {
 	return o.Leads
 }
 
+func (o *LinkSchema) GetPassword() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Password
+}
+
+func (o *LinkSchema) GetProjectID() string {
+	if o == nil {
+		return ""
+	}
+	return o.ProjectID
+}
+
+func (o *LinkSchema) GetProxy() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Proxy
+}
+
+func (o *LinkSchema) GetPublicStats() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.PublicStats
+}
+
+func (o *LinkSchema) GetQrCode() string {
+	if o == nil {
+		return ""
+	}
+	return o.QrCode
+}
+
+func (o *LinkSchema) GetRewrite() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Rewrite
+}
+
 func (o *LinkSchema) GetSales() *float64 {
 	if o == nil {
 		return nil
@@ -2358,11 +2281,39 @@ func (o *LinkSchema) GetSales() *float64 {
 	return o.Sales
 }
 
-func (o *LinkSchema) GetCreatedAt() string {
+func (o *LinkSchema) GetShortLink() string {
 	if o == nil {
 		return ""
 	}
-	return o.CreatedAt
+	return o.ShortLink
+}
+
+func (o *LinkSchema) GetTagID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TagID
+}
+
+func (o *LinkSchema) GetTags() []TagSchema {
+	if o == nil {
+		return nil
+	}
+	return o.Tags
+}
+
+func (o *LinkSchema) GetTitle() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Title
+}
+
+func (o *LinkSchema) GetTrackConversion() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.TrackConversion
 }
 
 func (o *LinkSchema) GetUpdatedAt() string {
@@ -2372,9 +2323,58 @@ func (o *LinkSchema) GetUpdatedAt() string {
 	return o.UpdatedAt
 }
 
-func (o *LinkSchema) GetProjectID() string {
+func (o *LinkSchema) GetURL() string {
 	if o == nil {
 		return ""
 	}
-	return o.ProjectID
+	return o.URL
+}
+
+func (o *LinkSchema) GetUserID() string {
+	if o == nil {
+		return ""
+	}
+	return o.UserID
+}
+
+func (o *LinkSchema) GetUtmCampaign() *string {
+	if o == nil {
+		return nil
+	}
+	return o.UtmCampaign
+}
+
+func (o *LinkSchema) GetUtmContent() *string {
+	if o == nil {
+		return nil
+	}
+	return o.UtmContent
+}
+
+func (o *LinkSchema) GetUtmMedium() *string {
+	if o == nil {
+		return nil
+	}
+	return o.UtmMedium
+}
+
+func (o *LinkSchema) GetUtmSource() *string {
+	if o == nil {
+		return nil
+	}
+	return o.UtmSource
+}
+
+func (o *LinkSchema) GetUtmTerm() *string {
+	if o == nil {
+		return nil
+	}
+	return o.UtmTerm
+}
+
+func (o *LinkSchema) GetWorkspaceID() string {
+	if o == nil {
+		return ""
+	}
+	return o.WorkspaceID
 }

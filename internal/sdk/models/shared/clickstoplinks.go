@@ -3,38 +3,38 @@
 package shared
 
 type ClicksTopLinks struct {
+	// The number of clicks from this link
+	Clicks float64 `json:"clicks"`
+	// The creation timestamp of the short link
+	CreatedAt string `json:"createdAt"`
+	// The domain of the short link
+	Domain string `json:"domain"`
+	// The unique ID of the short link
+	ID string `json:"id"`
+	// The key of the short link
+	Key string `json:"key"`
 	// The unique ID of the short link
 	//
 	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
 	Link string `json:"link"`
-	// The unique ID of the short link
-	ID string `json:"id"`
-	// The domain of the short link
-	Domain string `json:"domain"`
-	// The key of the short link
-	Key string `json:"key"`
 	// The short link URL
 	ShortLink string `json:"shortLink"`
 	// The destination URL of the short link
 	URL string `json:"url"`
-	// The creation timestamp of the short link
-	CreatedAt string `json:"createdAt"`
-	// The number of clicks from this link
-	Clicks float64 `json:"clicks"`
 }
 
-func (o *ClicksTopLinks) GetLink() string {
+func (o *ClicksTopLinks) GetClicks() float64 {
+	if o == nil {
+		return 0.0
+	}
+	return o.Clicks
+}
+
+func (o *ClicksTopLinks) GetCreatedAt() string {
 	if o == nil {
 		return ""
 	}
-	return o.Link
-}
-
-func (o *ClicksTopLinks) GetID() string {
-	if o == nil {
-		return ""
-	}
-	return o.ID
+	return o.CreatedAt
 }
 
 func (o *ClicksTopLinks) GetDomain() string {
@@ -44,11 +44,25 @@ func (o *ClicksTopLinks) GetDomain() string {
 	return o.Domain
 }
 
+func (o *ClicksTopLinks) GetID() string {
+	if o == nil {
+		return ""
+	}
+	return o.ID
+}
+
 func (o *ClicksTopLinks) GetKey() string {
 	if o == nil {
 		return ""
 	}
 	return o.Key
+}
+
+func (o *ClicksTopLinks) GetLink() string {
+	if o == nil {
+		return ""
+	}
+	return o.Link
 }
 
 func (o *ClicksTopLinks) GetShortLink() string {
@@ -63,18 +77,4 @@ func (o *ClicksTopLinks) GetURL() string {
 		return ""
 	}
 	return o.URL
-}
-
-func (o *ClicksTopLinks) GetCreatedAt() string {
-	if o == nil {
-		return ""
-	}
-	return o.CreatedAt
-}
-
-func (o *ClicksTopLinks) GetClicks() float64 {
-	if o == nil {
-		return 0.0
-	}
-	return o.Clicks
 }

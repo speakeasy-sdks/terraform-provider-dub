@@ -3,38 +3,31 @@
 package shared
 
 type LeadsTopLinks struct {
+	// The creation timestamp of the short link
+	CreatedAt string `json:"createdAt"`
+	// The domain of the short link
+	Domain string `json:"domain"`
+	// The unique ID of the short link
+	ID string `json:"id"`
+	// The key of the short link
+	Key string `json:"key"`
+	// The number of leads from this link
+	Leads float64 `json:"leads"`
 	// The unique ID of the short link
 	//
 	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
 	Link string `json:"link"`
-	// The unique ID of the short link
-	ID string `json:"id"`
-	// The domain of the short link
-	Domain string `json:"domain"`
-	// The key of the short link
-	Key string `json:"key"`
 	// The short link URL
 	ShortLink string `json:"shortLink"`
 	// The destination URL of the short link
 	URL string `json:"url"`
-	// The creation timestamp of the short link
-	CreatedAt string `json:"createdAt"`
-	// The number of leads from this link
-	Leads float64 `json:"leads"`
 }
 
-func (o *LeadsTopLinks) GetLink() string {
+func (o *LeadsTopLinks) GetCreatedAt() string {
 	if o == nil {
 		return ""
 	}
-	return o.Link
-}
-
-func (o *LeadsTopLinks) GetID() string {
-	if o == nil {
-		return ""
-	}
-	return o.ID
+	return o.CreatedAt
 }
 
 func (o *LeadsTopLinks) GetDomain() string {
@@ -44,11 +37,32 @@ func (o *LeadsTopLinks) GetDomain() string {
 	return o.Domain
 }
 
+func (o *LeadsTopLinks) GetID() string {
+	if o == nil {
+		return ""
+	}
+	return o.ID
+}
+
 func (o *LeadsTopLinks) GetKey() string {
 	if o == nil {
 		return ""
 	}
 	return o.Key
+}
+
+func (o *LeadsTopLinks) GetLeads() float64 {
+	if o == nil {
+		return 0.0
+	}
+	return o.Leads
+}
+
+func (o *LeadsTopLinks) GetLink() string {
+	if o == nil {
+		return ""
+	}
+	return o.Link
 }
 
 func (o *LeadsTopLinks) GetShortLink() string {
@@ -63,18 +77,4 @@ func (o *LeadsTopLinks) GetURL() string {
 		return ""
 	}
 	return o.URL
-}
-
-func (o *LeadsTopLinks) GetCreatedAt() string {
-	if o == nil {
-		return ""
-	}
-	return o.CreatedAt
-}
-
-func (o *LeadsTopLinks) GetLeads() float64 {
-	if o == nil {
-		return 0.0
-	}
-	return o.Leads
 }

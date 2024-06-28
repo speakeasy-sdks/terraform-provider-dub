@@ -3,40 +3,40 @@
 package shared
 
 type SalesTopLinks struct {
+	// The total amount of sales from this link
+	Amount float64 `json:"amount"`
+	// The creation timestamp of the short link
+	CreatedAt string `json:"createdAt"`
+	// The domain of the short link
+	Domain string `json:"domain"`
+	// The unique ID of the short link
+	ID string `json:"id"`
+	// The key of the short link
+	Key string `json:"key"`
 	// The unique ID of the short link
 	//
 	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
 	Link string `json:"link"`
-	// The unique ID of the short link
-	ID string `json:"id"`
-	// The domain of the short link
-	Domain string `json:"domain"`
-	// The key of the short link
-	Key string `json:"key"`
+	// The number of sales from this link
+	Sales float64 `json:"sales"`
 	// The short link URL
 	ShortLink string `json:"shortLink"`
 	// The destination URL of the short link
 	URL string `json:"url"`
-	// The creation timestamp of the short link
-	CreatedAt string `json:"createdAt"`
-	// The number of sales from this link
-	Sales float64 `json:"sales"`
-	// The total amount of sales from this link
-	Amount float64 `json:"amount"`
 }
 
-func (o *SalesTopLinks) GetLink() string {
+func (o *SalesTopLinks) GetAmount() float64 {
+	if o == nil {
+		return 0.0
+	}
+	return o.Amount
+}
+
+func (o *SalesTopLinks) GetCreatedAt() string {
 	if o == nil {
 		return ""
 	}
-	return o.Link
-}
-
-func (o *SalesTopLinks) GetID() string {
-	if o == nil {
-		return ""
-	}
-	return o.ID
+	return o.CreatedAt
 }
 
 func (o *SalesTopLinks) GetDomain() string {
@@ -46,11 +46,32 @@ func (o *SalesTopLinks) GetDomain() string {
 	return o.Domain
 }
 
+func (o *SalesTopLinks) GetID() string {
+	if o == nil {
+		return ""
+	}
+	return o.ID
+}
+
 func (o *SalesTopLinks) GetKey() string {
 	if o == nil {
 		return ""
 	}
 	return o.Key
+}
+
+func (o *SalesTopLinks) GetLink() string {
+	if o == nil {
+		return ""
+	}
+	return o.Link
+}
+
+func (o *SalesTopLinks) GetSales() float64 {
+	if o == nil {
+		return 0.0
+	}
+	return o.Sales
 }
 
 func (o *SalesTopLinks) GetShortLink() string {
@@ -65,25 +86,4 @@ func (o *SalesTopLinks) GetURL() string {
 		return ""
 	}
 	return o.URL
-}
-
-func (o *SalesTopLinks) GetCreatedAt() string {
-	if o == nil {
-		return ""
-	}
-	return o.CreatedAt
-}
-
-func (o *SalesTopLinks) GetSales() float64 {
-	if o == nil {
-		return 0.0
-	}
-	return o.Sales
-}
-
-func (o *SalesTopLinks) GetAmount() float64 {
-	if o == nil {
-		return 0.0
-	}
-	return o.Amount
 }

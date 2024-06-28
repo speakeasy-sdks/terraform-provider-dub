@@ -34,10 +34,10 @@ func (e *InternalServerErrorCode) UnmarshalJSON(data []byte) error {
 type InternalServerErrorError struct {
 	// A short code indicating the error code returned.
 	Code InternalServerErrorCode `json:"code"`
-	// A human readable explanation of what went wrong.
-	Message string `json:"message"`
 	// A link to our documentation with more details about this error code
 	DocURL *string `json:"doc_url,omitempty"`
+	// A human readable explanation of what went wrong.
+	Message string `json:"message"`
 }
 
 func (o *InternalServerErrorError) GetCode() InternalServerErrorCode {
@@ -47,18 +47,18 @@ func (o *InternalServerErrorError) GetCode() InternalServerErrorCode {
 	return o.Code
 }
 
-func (o *InternalServerErrorError) GetMessage() string {
-	if o == nil {
-		return ""
-	}
-	return o.Message
-}
-
 func (o *InternalServerErrorError) GetDocURL() *string {
 	if o == nil {
 		return nil
 	}
 	return o.DocURL
+}
+
+func (o *InternalServerErrorError) GetMessage() string {
+	if o == nil {
+		return ""
+	}
+	return o.Message
 }
 
 type InternalServerError struct {

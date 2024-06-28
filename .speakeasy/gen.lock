@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 692bb60c-96f2-4572-9da3-6b4d88b178a5
 management:
-  docChecksum: f8b1be2fa34844de98cc6c19757c0e81
+  docChecksum: fc9c4725543a9ef61c7b07771bf2269b
   docVersion: 0.0.1
   speakeasyVersion: 1.322.1
   generationVersion: 2.354.2
-  releaseVersion: 0.0.1
-  configChecksum: d3c72d25109afa8d157151b704e3ef5d
+  releaseVersion: 0.1.0
+  configChecksum: 7ee21e7d22b5c5be04cef01890435778
 features:
   terraform:
     additionalDependencies: 0.1.0
@@ -14,7 +14,6 @@ features:
     core: 3.22.0
     deprecations: 2.81.1
     examples: 2.81.5
-    flattening: 2.81.1
     globalSecurity: 2.81.6
     globalServerURLs: 2.82.1
     globals: 2.82.1
@@ -23,14 +22,14 @@ features:
     nullables: 0.0.0
     unions: 2.81.15
 generatedFiles:
-  - internal/sdk/links.go
-  - internal/sdk/qrcodes.go
   - internal/sdk/analytics.go
-  - internal/sdk/workspaces.go
-  - internal/sdk/tags.go
   - internal/sdk/domains.go
-  - internal/sdk/track.go
+  - internal/sdk/links.go
   - internal/sdk/metatags.go
+  - internal/sdk/qrcodes.go
+  - internal/sdk/tags.go
+  - internal/sdk/track.go
+  - internal/sdk/workspaces.go
   - internal/sdk/sdk.go
   - internal/sdk/models/errors/sdkerror.go
   - internal/sdk/types/bigint.go
@@ -49,31 +48,31 @@ generatedFiles:
   - internal/sdk/internal/utils/security.go
   - internal/sdk/internal/utils/utils.go
   - internal/sdk/internal/globals/globals.go
-  - internal/sdk/models/operations/getlinks.go
-  - internal/sdk/models/operations/createlink.go
-  - internal/sdk/models/operations/getlinkscount.go
-  - internal/sdk/models/operations/getlinkinfo.go
-  - internal/sdk/models/operations/deletelink.go
-  - internal/sdk/models/operations/updatelink.go
-  - internal/sdk/models/operations/bulkcreatelinks.go
-  - internal/sdk/models/operations/upsertlink.go
-  - internal/sdk/models/operations/getqrcode.go
   - internal/sdk/models/operations/retrieveanalytics.go
-  - internal/sdk/models/operations/getworkspaces.go
-  - internal/sdk/models/operations/createworkspace.go
-  - internal/sdk/models/operations/getworkspace.go
-  - internal/sdk/models/operations/gettags.go
-  - internal/sdk/models/operations/createtag.go
   - internal/sdk/models/operations/listdomains.go
   - internal/sdk/models/operations/createdomain.go
   - internal/sdk/models/operations/deletedomain.go
   - internal/sdk/models/operations/updatedomain.go
   - internal/sdk/models/operations/setprimarydomain.go
   - internal/sdk/models/operations/transferdomain.go
+  - internal/sdk/models/operations/getlinks.go
+  - internal/sdk/models/operations/createlink.go
+  - internal/sdk/models/operations/deletelink.go
+  - internal/sdk/models/operations/updatelink.go
+  - internal/sdk/models/operations/bulkcreatelinks.go
+  - internal/sdk/models/operations/getlinkscount.go
+  - internal/sdk/models/operations/getlinkinfo.go
+  - internal/sdk/models/operations/upsertlink.go
+  - internal/sdk/models/operations/getmetatags.go
+  - internal/sdk/models/operations/getqrcode.go
+  - internal/sdk/models/operations/gettags.go
+  - internal/sdk/models/operations/createtag.go
+  - internal/sdk/models/operations/trackcustomer.go
   - internal/sdk/models/operations/tracklead.go
   - internal/sdk/models/operations/tracksale.go
-  - internal/sdk/models/operations/trackcustomer.go
-  - internal/sdk/models/operations/getmetatags.go
+  - internal/sdk/models/operations/getworkspaces.go
+  - internal/sdk/models/operations/createworkspace.go
+  - internal/sdk/models/operations/getworkspace.go
   - internal/sdk/models/shared/internalservererror.go
   - internal/sdk/models/shared/ratelimitexceeded.go
   - internal/sdk/models/shared/unprocessableentity.go
@@ -83,9 +82,6 @@ generatedFiles:
   - internal/sdk/models/shared/forbidden.go
   - internal/sdk/models/shared/unauthorized.go
   - internal/sdk/models/shared/badrequest.go
-  - internal/sdk/models/shared/linkschema.go
-  - internal/sdk/models/shared/tagschema.go
-  - internal/sdk/models/shared/linkgeotargeting.go
   - internal/sdk/models/shared/clickscount.go
   - internal/sdk/models/shared/clickstimeseries.go
   - internal/sdk/models/shared/clickscountries.go
@@ -117,8 +113,11 @@ generatedFiles:
   - internal/sdk/models/shared/salestoplinks.go
   - internal/sdk/models/shared/salestopurls.go
   - internal/sdk/models/shared/countrycode.go
-  - internal/sdk/models/shared/workspaceschema.go
   - internal/sdk/models/shared/domainschema.go
+  - internal/sdk/models/shared/linkschema.go
+  - internal/sdk/models/shared/tagschema.go
+  - internal/sdk/models/shared/linkgeotargeting.go
+  - internal/sdk/models/shared/workspaceschema.go
   - internal/sdk/models/shared/security.go
   - internal/sdk/.gitignore
   - internal/sdk/models/operations/options.go
@@ -172,4 +171,7 @@ generatedFiles:
   - USAGE.md
   - internal/provider/provider.go
   - examples/provider/provider.tf
+  - internal/provider/domain_resource.go
+  - internal/provider/domain_resource_sdk.go
+  - examples/resources/dub_domain/resource.tf
   - .gitattributes

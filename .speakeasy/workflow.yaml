@@ -8,6 +8,6 @@ sources:
         registry:
             location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/dub
 targets:
-    sdk:
+    terraform-provider-dub:
         target: terraform
         source: dub

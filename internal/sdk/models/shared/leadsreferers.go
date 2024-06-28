@@ -3,17 +3,10 @@
 package shared
 
 type LeadsReferers struct {
-	// The name of the referer. If unknown, this will be `(direct)`
-	Referer string `json:"referer"`
 	// The number of leads from this referer
 	Leads float64 `json:"leads"`
-}
-
-func (o *LeadsReferers) GetReferer() string {
-	if o == nil {
-		return ""
-	}
-	return o.Referer
+	// The name of the referer. If unknown, this will be `(direct)`
+	Referer string `json:"referer"`
 }
 
 func (o *LeadsReferers) GetLeads() float64 {
@@ -21,4 +14,11 @@ func (o *LeadsReferers) GetLeads() float64 {
 		return 0.0
 	}
 	return o.Leads
+}
+
+func (o *LeadsReferers) GetReferer() string {
+	if o == nil {
+		return ""
+	}
+	return o.Referer
 }

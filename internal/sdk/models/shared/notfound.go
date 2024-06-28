@@ -34,10 +34,10 @@ func (e *NotFoundCode) UnmarshalJSON(data []byte) error {
 type NotFoundError struct {
 	// A short code indicating the error code returned.
 	Code NotFoundCode `json:"code"`
-	// A human readable explanation of what went wrong.
-	Message string `json:"message"`
 	// A link to our documentation with more details about this error code
 	DocURL *string `json:"doc_url,omitempty"`
+	// A human readable explanation of what went wrong.
+	Message string `json:"message"`
 }
 
 func (o *NotFoundError) GetCode() NotFoundCode {
@@ -47,18 +47,18 @@ func (o *NotFoundError) GetCode() NotFoundCode {
 	return o.Code
 }
 
-func (o *NotFoundError) GetMessage() string {
-	if o == nil {
-		return ""
-	}
-	return o.Message
-}
-
 func (o *NotFoundError) GetDocURL() *string {
 	if o == nil {
 		return nil
 	}
 	return o.DocURL
+}
+
+func (o *NotFoundError) GetMessage() string {
+	if o == nil {
+		return ""
+	}
+	return o.Message
 }
 
 type NotFound struct {

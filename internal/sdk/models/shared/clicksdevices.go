@@ -3,17 +3,10 @@
 package shared
 
 type ClicksDevices struct {
-	// The name of the device
-	Device string `json:"device"`
 	// The number of clicks from this device
 	Clicks float64 `json:"clicks"`
-}
-
-func (o *ClicksDevices) GetDevice() string {
-	if o == nil {
-		return ""
-	}
-	return o.Device
+	// The name of the device
+	Device string `json:"device"`
 }
 
 func (o *ClicksDevices) GetClicks() float64 {
@@ -21,4 +14,11 @@ func (o *ClicksDevices) GetClicks() float64 {
 		return 0.0
 	}
 	return o.Clicks
+}
+
+func (o *ClicksDevices) GetDevice() string {
+	if o == nil {
+		return ""
+	}
+	return o.Device
 }

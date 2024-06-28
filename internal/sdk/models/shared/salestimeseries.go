@@ -3,19 +3,19 @@
 package shared
 
 type SalesTimeseries struct {
-	// The starting timestamp of the interval
-	Start string `json:"start"`
-	// The number of sales in the interval
-	Sales float64 `json:"sales"`
 	// The total amount of sales in the interval
 	Amount float64 `json:"amount"`
+	// The number of sales in the interval
+	Sales float64 `json:"sales"`
+	// The starting timestamp of the interval
+	Start string `json:"start"`
 }
 
-func (o *SalesTimeseries) GetStart() string {
+func (o *SalesTimeseries) GetAmount() float64 {
 	if o == nil {
-		return ""
+		return 0.0
 	}
-	return o.Start
+	return o.Amount
 }
 
 func (o *SalesTimeseries) GetSales() float64 {
@@ -25,9 +25,9 @@ func (o *SalesTimeseries) GetSales() float64 {
 	return o.Sales
 }
 
-func (o *SalesTimeseries) GetAmount() float64 {
+func (o *SalesTimeseries) GetStart() string {
 	if o == nil {
-		return 0.0
+		return ""
 	}
-	return o.Amount
+	return o.Start
 }

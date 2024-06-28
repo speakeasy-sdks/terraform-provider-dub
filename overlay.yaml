@@ -1,0 +1,22 @@
+overlay: 1.0.0
+info:
+  title: Overlay base.yaml => changed.yaml
+  version: 0.0.0
+actions:
+  - target: $["components"]["schemas"]["DomainSchema"]
+    update:
+      x-speakeasy-entity: Domain
+  - target: $["paths"]["/domains"]["post"]["requestBody"]["content"]["application/json"]["schema"]
+    update:
+      x-speakeasy-entity: Domain
+  - target: $["paths"]["/domains"]["post"]
+    update:
+      x-speakeasy-entity-operation: Domain#create
+  - target: $["paths"]["/domains/{slug}"]["delete"]
+    update:
+      x-speakeasy-entity-operation: Domain#delete
+  - target: $["paths"]["/domains/{slug}"]["patch"]
+    update:
+      x-speakeasy-entity-operation: Domain#update
+  - target: $..x-speakeasy-max-method-params
+    remove: true

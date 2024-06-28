@@ -5,7 +5,7 @@ package operations
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/models/shared"
+	"github.com/dub/terraform-provider-dub/internal/sdk/models/shared"
 	"net/http"
 )
 
@@ -72,17 +72,10 @@ func (e *Color) UnmarshalJSON(data []byte) error {
 }
 
 type CreateTagRequestBody struct {
-	// The name of the tag to create.
-	Tag string `json:"tag"`
 	// The color of the tag. If not provided, a random color will be used from the list: red, yellow, green, blue, purple, pink, brown.
 	Color *Color `json:"color,omitempty"`
-}
-
-func (o *CreateTagRequestBody) GetTag() string {
-	if o == nil {
-		return ""
-	}
-	return o.Tag
+	// The name of the tag to create.
+	Tag string `json:"tag"`
 }
 
 func (o *CreateTagRequestBody) GetColor() *Color {
@@ -90,6 +83,13 @@ func (o *CreateTagRequestBody) GetColor() *Color {
 		return nil
 	}
 	return o.Color
+}
+
+func (o *CreateTagRequestBody) GetTag() string {
+	if o == nil {
+		return ""
+	}
+	return o.Tag
 }
 
 type CreateTagResponse struct {

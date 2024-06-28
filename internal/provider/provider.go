@@ -4,13 +4,13 @@ package provider
 
 import (
 	"context"
+	"github.com/dub/terraform-provider-dub/internal/sdk"
+	"github.com/dub/terraform-provider-dub/internal/sdk/models/shared"
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/provider"
 	"github.com/hashicorp/terraform-plugin-framework/provider/schema"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
 	"github.com/hashicorp/terraform-plugin-framework/types"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/models/shared"
 	"net/http"
 )
 
@@ -88,7 +88,9 @@ func (p *DubProvider) Configure(ctx context.Context, req provider.ConfigureReque
 }
 
 func (p *DubProvider) Resources(ctx context.Context) []func() resource.Resource {
-	return []func() resource.Resource{}
+	return []func() resource.Resource{
+		NewDomainResource,
+	}
 }
 
 func (p *DubProvider) DataSources(ctx context.Context) []func() datasource.DataSource {

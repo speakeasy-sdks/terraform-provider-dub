@@ -6,11 +6,11 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/internal/hooks"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/internal/utils"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/models/errors"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/models/operations"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/models/shared"
+	"github.com/dub/terraform-provider-dub/internal/sdk/internal/hooks"
+	"github.com/dub/terraform-provider-dub/internal/sdk/internal/utils"
+	"github.com/dub/terraform-provider-dub/internal/sdk/models/errors"
+	"github.com/dub/terraform-provider-dub/internal/sdk/models/operations"
+	"github.com/dub/terraform-provider-dub/internal/sdk/models/shared"
 	"io"
 	"net/http"
 )
@@ -451,16 +451,12 @@ func (s *Domains) Create(ctx context.Context, request *operations.CreateDomainRe
 
 // Delete a domain
 // Delete a domain from a workspace. It cannot be undone. This will also delete all the links associated with the domain.
-func (s *Domains) Delete(ctx context.Context, slug string) (*operations.DeleteDomainResponse, error) {
+func (s *Domains) Delete(ctx context.Context, request operations.DeleteDomainRequest) (*operations.DeleteDomainResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "deleteDomain",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.DeleteDomainRequest{
-		Slug: slug,
 	}
 
 	globals := operations.DeleteDomainGlobals{
@@ -664,17 +660,12 @@ func (s *Domains) Delete(ctx context.Context, slug string) (*operations.DeleteDo
 
 // Update a domain
 // Update a domain for the authenticated workspace.
-func (s *Domains) Update(ctx context.Context, slug string, requestBody *operations.UpdateDomainRequestBody) (*operations.UpdateDomainResponse, error) {
+func (s *Domains) Update(ctx context.Context, request operations.UpdateDomainRequest) (*operations.UpdateDomainResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "updateDomain",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.UpdateDomainRequest{
-		Slug:        slug,
-		RequestBody: requestBody,
 	}
 
 	globals := operations.UpdateDomainGlobals{
@@ -884,16 +875,12 @@ func (s *Domains) Update(ctx context.Context, slug string, requestBody *operatio
 
 // SetPrimary - Set a domain as primary
 // Set a domain as primary for the authenticated workspace.
-func (s *Domains) SetPrimary(ctx context.Context, slug string) (*operations.SetPrimaryDomainResponse, error) {
+func (s *Domains) SetPrimary(ctx context.Context, request operations.SetPrimaryDomainRequest) (*operations.SetPrimaryDomainResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "setPrimaryDomain",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.SetPrimaryDomainRequest{
-		Slug: slug,
 	}
 
 	globals := operations.SetPrimaryDomainGlobals{
@@ -1097,17 +1084,12 @@ func (s *Domains) SetPrimary(ctx context.Context, slug string) (*operations.SetP
 
 // Transfer a domain
 // Transfer a domain to another workspace within the authenticated account.
-func (s *Domains) Transfer(ctx context.Context, slug string, requestBody *operations.TransferDomainRequestBody) (*operations.TransferDomainResponse, error) {
+func (s *Domains) Transfer(ctx context.Context, request operations.TransferDomainRequest) (*operations.TransferDomainResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "transferDomain",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
-	}
-
-	request := operations.TransferDomainRequest{
-		Slug:        slug,
-		RequestBody: requestBody,
 	}
 
 	globals := operations.TransferDomainGlobals{

@@ -2,16 +2,22 @@ speakeasyVersion: 1.322.1
 sources:
     dub:
         sourceNamespace: dub
-        sourceRevisionDigest: sha256:8c4d083a779b8bda34676354d5e6ea3a49eb399dd95a5fcd86ec31745357c3dc
-        sourceBlobDigest: sha256:4198d64ba96bbd672d5318dfacf8b643781054d69ece25b180276a59c84009d5
+        sourceRevisionDigest: sha256:eb127c8c203c61eea401974a335b1e8dfa0b8746fd6b491a5b947dba991686d5
+        sourceBlobDigest: sha256:fe479ce1b2b6604b867d1437a7e87313e180de3cd03971ea732f60886fc183a0
         tags:
             - latest
 targets:
     sdk:
         source: dub
         sourceNamespace: dub
-        sourceRevisionDigest: sha256:8c4d083a779b8bda34676354d5e6ea3a49eb399dd95a5fcd86ec31745357c3dc
-        sourceBlobDigest: sha256:4198d64ba96bbd672d5318dfacf8b643781054d69ece25b180276a59c84009d5
+        sourceRevisionDigest: sha256:6c24bb23318e7fa34e3390e886c05f98100a58f349c68ee2739ec7eb9f59f068
+        sourceBlobDigest: sha256:de45fecf22676b032f7534c62581882a3ff8d3e7687886bc89d58cdfe11ccd7e
+        outLocation: /Users/thomasrooney/Code/speakeasy-sdks/terraform-provider-dub
+    terraform-provider-dub:
+        source: dub
+        sourceNamespace: dub
+        sourceRevisionDigest: sha256:eb127c8c203c61eea401974a335b1e8dfa0b8746fd6b491a5b947dba991686d5
+        sourceBlobDigest: sha256:fe479ce1b2b6604b867d1437a7e87313e180de3cd03971ea732f60886fc183a0
         outLocation: /Users/thomasrooney/Code/speakeasy-sdks/terraform-provider-dub
 workflow:
     workflowVersion: 1.0.0
@@ -19,9 +25,11 @@ workflow:
         dub:
             inputs:
                 - location: https://api.dub.co
+            overlays:
+                - location: overlay.yaml
             registry:
                 location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/dub
     targets:
-        sdk:
+        terraform-provider-dub:
             target: terraform
             source: dub

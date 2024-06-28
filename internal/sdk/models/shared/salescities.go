@@ -779,14 +779,21 @@ func (e *SalesCitiesCountry) UnmarshalJSON(data []byte) error {
 }
 
 type SalesCities struct {
+	// The total amount of sales from this city
+	Amount float64 `json:"amount"`
 	// The name of the city
 	City string `json:"city"`
 	// The 2-letter country code of the city: https://d.to/geo
 	Country SalesCitiesCountry `json:"country"`
 	// The number of sales from this city
 	Sales float64 `json:"sales"`
-	// The total amount of sales from this city
-	Amount float64 `json:"amount"`
+}
+
+func (o *SalesCities) GetAmount() float64 {
+	if o == nil {
+		return 0.0
+	}
+	return o.Amount
 }
 
 func (o *SalesCities) GetCity() string {
@@ -808,11 +815,4 @@ func (o *SalesCities) GetSales() float64 {
 		return 0.0
 	}
 	return o.Sales
-}
-
-func (o *SalesCities) GetAmount() float64 {
-	if o == nil {
-		return 0.0
-	}
-	return o.Amount
 }

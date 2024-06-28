@@ -4,7 +4,7 @@ package operations
 
 import (
 	"errors"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/internal/utils"
+	"github.com/dub/terraform-provider-dub/internal/sdk/internal/utils"
 )
 
 var ErrUnsupportedOption = errors.New("unsupported option")

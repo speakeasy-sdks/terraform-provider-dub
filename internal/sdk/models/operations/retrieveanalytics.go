@@ -6,8 +6,8 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/internal/utils"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/models/shared"
+	"github.com/dub/terraform-provider-dub/internal/sdk/internal/utils"
+	"github.com/dub/terraform-provider-dub/internal/sdk/models/shared"
 	"net/http"
 )
 
@@ -64,27 +64,27 @@ func (e *Event) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// QueryParamGroupBy - The parameter to group the analytics data points by. Defaults to 'count' if undefined.
-type QueryParamGroupBy string
+// GroupBy - The parameter to group the analytics data points by. Defaults to 'count' if undefined.
+type GroupBy string
 
 const (
-	QueryParamGroupByCount      QueryParamGroupBy = "count"
-	QueryParamGroupByTimeseries QueryParamGroupBy = "timeseries"
-	QueryParamGroupByCountries  QueryParamGroupBy = "countries"
-	QueryParamGroupByCities     QueryParamGroupBy = "cities"
-	QueryParamGroupByDevices    QueryParamGroupBy = "devices"
-	QueryParamGroupByBrowsers   QueryParamGroupBy = "browsers"
-	QueryParamGroupByOs         QueryParamGroupBy = "os"
-	QueryParamGroupByReferers   QueryParamGroupBy = "referers"
-	QueryParamGroupByTopLinks   QueryParamGroupBy = "top_links"
-	QueryParamGroupByTopUrls    QueryParamGroupBy = "top_urls"
-	QueryParamGroupByTrigger    QueryParamGroupBy = "trigger"
+	GroupByCount      GroupBy = "count"
+	GroupByTimeseries GroupBy = "timeseries"
+	GroupByCountries  GroupBy = "countries"
+	GroupByCities     GroupBy = "cities"
+	GroupByDevices    GroupBy = "devices"
+	GroupByBrowsers   GroupBy = "browsers"
+	GroupByOs         GroupBy = "os"
+	GroupByReferers   GroupBy = "referers"
+	GroupByTopLinks   GroupBy = "top_links"
+	GroupByTopUrls    GroupBy = "top_urls"
+	GroupByTrigger    GroupBy = "trigger"
 )
 
-func (e QueryParamGroupBy) ToPointer() *QueryParamGroupBy {
+func (e GroupBy) ToPointer() *GroupBy {
 	return &e
 }
-func (e *QueryParamGroupBy) UnmarshalJSON(data []byte) error {
+func (e *GroupBy) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -111,10 +111,10 @@ func (e *QueryParamGroupBy) UnmarshalJSON(data []byte) error {
 	case "top_urls":
 		fallthrough
 	case "trigger":
-		*e = QueryParamGroupBy(v)
+		*e = GroupBy(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for QueryParamGroupBy: %v", v)
+		return fmt.Errorf("invalid value for GroupBy: %v", v)
 	}
 }
 
@@ -167,7 +167,7 @@ type RetrieveAnalyticsRequest struct {
 	// The type of event to retrieve analytics for. Defaults to 'clicks'.
 	Event *Event `default:"clicks" queryParam:"style=form,explode=true,name=event"`
 	// The parameter to group the analytics data points by. Defaults to 'count' if undefined.
-	GroupBy *QueryParamGroupBy `default:"count" queryParam:"style=form,explode=true,name=groupBy"`
+	GroupBy *GroupBy `default:"count" queryParam:"style=form,explode=true,name=groupBy"`
 	// The domain to filter analytics for.
 	Domain *string `queryParam:"style=form,explode=true,name=domain"`
 	// The short link slug.
@@ -224,7 +224,7 @@ func (o *RetrieveAnalyticsRequest) GetEvent() *Event {
 	return o.Event
 }
 
-func (o *RetrieveAnalyticsRequest) GetGroupBy() *QueryParamGroupBy {
+func (o *RetrieveAnalyticsRequest) GetGroupBy() *GroupBy {
 	if o == nil {
 		return nil
 	}

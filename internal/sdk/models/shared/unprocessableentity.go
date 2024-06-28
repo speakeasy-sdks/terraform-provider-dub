@@ -34,10 +34,10 @@ func (e *UnprocessableEntityCode) UnmarshalJSON(data []byte) error {
 type UnprocessableEntityError struct {
 	// A short code indicating the error code returned.
 	Code UnprocessableEntityCode `json:"code"`
-	// A human readable explanation of what went wrong.
-	Message string `json:"message"`
 	// A link to our documentation with more details about this error code
 	DocURL *string `json:"doc_url,omitempty"`
+	// A human readable explanation of what went wrong.
+	Message string `json:"message"`
 }
 
 func (o *UnprocessableEntityError) GetCode() UnprocessableEntityCode {
@@ -47,18 +47,18 @@ func (o *UnprocessableEntityError) GetCode() UnprocessableEntityCode {
 	return o.Code
 }
 
-func (o *UnprocessableEntityError) GetMessage() string {
-	if o == nil {
-		return ""
-	}
-	return o.Message
-}
-
 func (o *UnprocessableEntityError) GetDocURL() *string {
 	if o == nil {
 		return nil
 	}
 	return o.DocURL
+}
+
+func (o *UnprocessableEntityError) GetMessage() string {
+	if o == nil {
+		return ""
+	}
+	return o.Message
 }
 
 type UnprocessableEntity struct {

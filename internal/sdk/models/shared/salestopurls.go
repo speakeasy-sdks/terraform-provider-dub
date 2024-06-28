@@ -3,19 +3,19 @@
 package shared
 
 type SalesTopUrls struct {
-	// The destination URL
-	URL string `json:"url"`
-	// The number of sales from this URL
-	Sales float64 `json:"sales"`
 	// The total amount of sales from this URL
 	Amount float64 `json:"amount"`
+	// The number of sales from this URL
+	Sales float64 `json:"sales"`
+	// The destination URL
+	URL string `json:"url"`
 }
 
-func (o *SalesTopUrls) GetURL() string {
+func (o *SalesTopUrls) GetAmount() float64 {
 	if o == nil {
-		return ""
+		return 0.0
 	}
-	return o.URL
+	return o.Amount
 }
 
 func (o *SalesTopUrls) GetSales() float64 {
@@ -25,9 +25,9 @@ func (o *SalesTopUrls) GetSales() float64 {
 	return o.Sales
 }
 
-func (o *SalesTopUrls) GetAmount() float64 {
+func (o *SalesTopUrls) GetURL() string {
 	if o == nil {
-		return 0.0
+		return ""
 	}
-	return o.Amount
+	return o.URL
 }

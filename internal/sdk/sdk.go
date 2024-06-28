@@ -5,10 +5,10 @@ package sdk
 import (
 	"context"
 	"fmt"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/internal/globals"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/internal/hooks"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/internal/utils"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/models/shared"
+	"github.com/dub/terraform-provider-dub/internal/sdk/internal/globals"
+	"github.com/dub/terraform-provider-dub/internal/sdk/internal/hooks"
+	"github.com/dub/terraform-provider-dub/internal/sdk/internal/utils"
+	"github.com/dub/terraform-provider-dub/internal/sdk/models/shared"
 	"net/http"
 	"time"
 )
@@ -67,14 +67,14 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 
 // SDK - Dub.co API: Dub is link management infrastructure for companies to create marketing campaigns, link sharing features, and referral programs.
 type SDK struct {
-	Links      *Links
-	QRCodes    *QRCodes
 	Analytics  *Analytics
-	Workspaces *Workspaces
-	Tags       *Tags
 	Domains    *Domains
-	Track      *Track
+	Links      *Links
 	Metatags   *Metatags
+	QRCodes    *QRCodes
+	Tags       *Tags
+	Track      *Track
+	Workspaces *Workspaces
 
 	sdkConfiguration sdkConfiguration
 }
@@ -161,7 +161,7 @@ func New(opts ...SDKOption) *SDK {
 			OpenAPIDocVersion: "0.0.1",
 			SDKVersion:        "0.0.1",
 			GenVersion:        "2.354.2",
-			UserAgent:         "speakeasy-sdk/go 0.0.1 2.354.2 0.0.1 github.com/speakeasy/terraform-provider-dub/internal/sdk",
+			UserAgent:         "speakeasy-sdk/go 0.0.1 2.354.2 0.0.1 github.com/dub/terraform-provider-dub/internal/sdk",
 			Globals:           globals.Globals{},
 			Hooks:             hooks.New(),
 		},
@@ -182,21 +182,21 @@ func New(opts ...SDKOption) *SDK {
 		sdk.sdkConfiguration.ServerURL = serverURL
 	}
 
-	sdk.Links = newLinks(sdk.sdkConfiguration)
-
-	sdk.QRCodes = newQRCodes(sdk.sdkConfiguration)
-
 	sdk.Analytics = newAnalytics(sdk.sdkConfiguration)
-
-	sdk.Workspaces = newWorkspaces(sdk.sdkConfiguration)
-
-	sdk.Tags = newTags(sdk.sdkConfiguration)
 
 	sdk.Domains = newDomains(sdk.sdkConfiguration)
 
-	sdk.Track = newTrack(sdk.sdkConfiguration)
+	sdk.Links = newLinks(sdk.sdkConfiguration)
 
 	sdk.Metatags = newMetatags(sdk.sdkConfiguration)
+
+	sdk.QRCodes = newQRCodes(sdk.sdkConfiguration)
+
+	sdk.Tags = newTags(sdk.sdkConfiguration)
+
+	sdk.Track = newTrack(sdk.sdkConfiguration)
+
+	sdk.Workspaces = newWorkspaces(sdk.sdkConfiguration)
 
 	return sdk
 }

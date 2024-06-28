@@ -3,12 +3,19 @@
 package shared
 
 type SalesReferers struct {
+	// The total amount of sales from this referer
+	Amount float64 `json:"amount"`
 	// The name of the referer. If unknown, this will be `(direct)`
 	Referer string `json:"referer"`
 	// The number of sales from this referer
 	Sales float64 `json:"sales"`
-	// The total amount of sales from this referer
-	Amount float64 `json:"amount"`
+}
+
+func (o *SalesReferers) GetAmount() float64 {
+	if o == nil {
+		return 0.0
+	}
+	return o.Amount
 }
 
 func (o *SalesReferers) GetReferer() string {
@@ -23,11 +30,4 @@ func (o *SalesReferers) GetSales() float64 {
 		return 0.0
 	}
 	return o.Sales
-}
-
-func (o *SalesReferers) GetAmount() float64 {
-	if o == nil {
-		return 0.0
-	}
-	return o.Amount
 }

@@ -50,12 +50,19 @@ func (e *Color) UnmarshalJSON(data []byte) error {
 }
 
 type TagSchema struct {
+	// The color of the tag.
+	Color Color `json:"color"`
 	// The unique ID of the tag.
 	ID string `json:"id"`
 	// The name of the tag.
 	Name string `json:"name"`
-	// The color of the tag.
-	Color Color `json:"color"`
+}
+
+func (o *TagSchema) GetColor() Color {
+	if o == nil {
+		return Color("")
+	}
+	return o.Color
 }
 
 func (o *TagSchema) GetID() string {
@@ -70,11 +77,4 @@ func (o *TagSchema) GetName() string {
 		return ""
 	}
 	return o.Name
-}
-
-func (o *TagSchema) GetColor() Color {
-	if o == nil {
-		return Color("")
-	}
-	return o.Color
 }

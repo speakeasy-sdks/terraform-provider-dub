@@ -781,10 +781,10 @@ func (e *ClicksCitiesCountry) UnmarshalJSON(data []byte) error {
 type ClicksCities struct {
 	// The name of the city
 	City string `json:"city"`
-	// The 2-letter country code of the city: https://d.to/geo
-	Country ClicksCitiesCountry `json:"country"`
 	// The number of clicks from this city
 	Clicks float64 `json:"clicks"`
+	// The 2-letter country code of the city: https://d.to/geo
+	Country ClicksCitiesCountry `json:"country"`
 }
 
 func (o *ClicksCities) GetCity() string {
@@ -794,16 +794,16 @@ func (o *ClicksCities) GetCity() string {
 	return o.City
 }
 
-func (o *ClicksCities) GetCountry() ClicksCitiesCountry {
-	if o == nil {
-		return ClicksCitiesCountry("")
-	}
-	return o.Country
-}
-
 func (o *ClicksCities) GetClicks() float64 {
 	if o == nil {
 		return 0.0
 	}
 	return o.Clicks
+}
+
+func (o *ClicksCities) GetCountry() ClicksCitiesCountry {
+	if o == nil {
+		return ClicksCitiesCountry("")
+	}
+	return o.Country
 }

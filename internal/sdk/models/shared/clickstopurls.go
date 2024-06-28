@@ -3,17 +3,10 @@
 package shared
 
 type ClicksTopUrls struct {
-	// The destination URL
-	URL string `json:"url"`
 	// The number of clicks from this URL
 	Clicks float64 `json:"clicks"`
-}
-
-func (o *ClicksTopUrls) GetURL() string {
-	if o == nil {
-		return ""
-	}
-	return o.URL
+	// The destination URL
+	URL string `json:"url"`
 }
 
 func (o *ClicksTopUrls) GetClicks() float64 {
@@ -21,4 +14,11 @@ func (o *ClicksTopUrls) GetClicks() float64 {
 		return 0.0
 	}
 	return o.Clicks
+}
+
+func (o *ClicksTopUrls) GetURL() string {
+	if o == nil {
+		return ""
+	}
+	return o.URL
 }

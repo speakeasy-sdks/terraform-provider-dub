@@ -3,8 +3,8 @@
 package operations
 
 import (
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/internal/utils"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/models/shared"
+	"github.com/dub/terraform-provider-dub/internal/sdk/internal/utils"
+	"github.com/dub/terraform-provider-dub/internal/sdk/models/shared"
 	"net/http"
 )
 
@@ -29,14 +29,14 @@ func (o *CreateDomainGlobals) GetProjectSlug() *string {
 }
 
 type CreateDomainRequestBody struct {
-	// Name of the domain.
-	Slug string `json:"slug"`
-	// Redirect users to a specific URL when any link under this domain has expired.
-	ExpiredURL *string `json:"expiredUrl,omitempty"`
 	// Whether to archive this domain. `false` will unarchive a previously archived domain.
 	Archived *bool `default:"false" json:"archived"`
+	// Redirect users to a specific URL when any link under this domain has expired.
+	ExpiredURL *string `json:"expiredUrl,omitempty"`
 	// Provide context to your teammates in the link creation modal by showing them an example of a link to be shortened.
 	Placeholder *string `default:"https://dub.co/help/article/what-is-dub" json:"placeholder"`
+	// Name of the domain.
+	Slug string `json:"slug"`
 }
 
 func (c CreateDomainRequestBody) MarshalJSON() ([]byte, error) {
@@ -50,11 +50,11 @@ func (c *CreateDomainRequestBody) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CreateDomainRequestBody) GetSlug() string {
+func (o *CreateDomainRequestBody) GetArchived() *bool {
 	if o == nil {
-		return ""
+		return nil
 	}
-	return o.Slug
+	return o.Archived
 }
 
 func (o *CreateDomainRequestBody) GetExpiredURL() *string {
@@ -64,18 +64,18 @@ func (o *CreateDomainRequestBody) GetExpiredURL() *string {
 	return o.ExpiredURL
 }
 
-func (o *CreateDomainRequestBody) GetArchived() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.Archived
-}
-
 func (o *CreateDomainRequestBody) GetPlaceholder() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Placeholder
+}
+
+func (o *CreateDomainRequestBody) GetSlug() string {
+	if o == nil {
+		return ""
+	}
+	return o.Slug
 }
 
 type CreateDomainResponse struct {

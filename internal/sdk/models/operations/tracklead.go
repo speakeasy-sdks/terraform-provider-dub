@@ -3,7 +3,7 @@
 package operations
 
 import (
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/models/shared"
+	"github.com/dub/terraform-provider-dub/internal/sdk/models/shared"
 	"net/http"
 )
 
@@ -30,16 +30,16 @@ func (o *TrackLeadGlobals) GetProjectSlug() *string {
 type TrackLeadRequestBody struct {
 	// The ID of the click in th Dub. You can read this value from `dclid` cookie.
 	ClickID string `json:"clickId"`
-	// The name of the event to track.
-	EventName string `json:"eventName"`
+	// Avatar of the customer in the client's app.
+	CustomerAvatar *string `json:"customerAvatar,omitempty"`
+	// Email of the customer in the client's app.
+	CustomerEmail *string `json:"customerEmail,omitempty"`
 	// This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
 	CustomerID string `json:"customerId"`
 	// Name of the customer in the client's app.
 	CustomerName *string `json:"customerName,omitempty"`
-	// Email of the customer in the client's app.
-	CustomerEmail *string `json:"customerEmail,omitempty"`
-	// Avatar of the customer in the client's app.
-	CustomerAvatar *string `json:"customerAvatar,omitempty"`
+	// The name of the event to track.
+	EventName string `json:"eventName"`
 	// Additional metadata to be stored with the lead event
 	Metadata map[string]any `json:"metadata,omitempty"`
 }
@@ -51,11 +51,18 @@ func (o *TrackLeadRequestBody) GetClickID() string {
 	return o.ClickID
 }
 
-func (o *TrackLeadRequestBody) GetEventName() string {
+func (o *TrackLeadRequestBody) GetCustomerAvatar() *string {
 	if o == nil {
-		return ""
+		return nil
 	}
-	return o.EventName
+	return o.CustomerAvatar
+}
+
+func (o *TrackLeadRequestBody) GetCustomerEmail() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CustomerEmail
 }
 
 func (o *TrackLeadRequestBody) GetCustomerID() string {
@@ -72,18 +79,11 @@ func (o *TrackLeadRequestBody) GetCustomerName() *string {
 	return o.CustomerName
 }
 
-func (o *TrackLeadRequestBody) GetCustomerEmail() *string {
+func (o *TrackLeadRequestBody) GetEventName() string {
 	if o == nil {
-		return nil
+		return ""
 	}
-	return o.CustomerEmail
-}
-
-func (o *TrackLeadRequestBody) GetCustomerAvatar() *string {
-	if o == nil {
-		return nil
-	}
-	return o.CustomerAvatar
+	return o.EventName
 }
 
 func (o *TrackLeadRequestBody) GetMetadata() map[string]any {
@@ -96,11 +96,11 @@ func (o *TrackLeadRequestBody) GetMetadata() map[string]any {
 // TrackLeadResponseBody - A lead was tracked.
 type TrackLeadResponseBody struct {
 	ClickID        string         `json:"clickId"`
-	EventName      string         `json:"eventName"`
+	CustomerAvatar *string        `json:"customerAvatar"`
+	CustomerEmail  *string        `json:"customerEmail"`
 	CustomerID     string         `json:"customerId"`
 	CustomerName   *string        `json:"customerName"`
-	CustomerEmail  *string        `json:"customerEmail"`
-	CustomerAvatar *string        `json:"customerAvatar"`
+	EventName      string         `json:"eventName"`
 	Metadata       map[string]any `json:"metadata,omitempty"`
 }
 
@@ -111,11 +111,18 @@ func (o *TrackLeadResponseBody) GetClickID() string {
 	return o.ClickID
 }
 
-func (o *TrackLeadResponseBody) GetEventName() string {
+func (o *TrackLeadResponseBody) GetCustomerAvatar() *string {
 	if o == nil {
-		return ""
+		return nil
 	}
-	return o.EventName
+	return o.CustomerAvatar
+}
+
+func (o *TrackLeadResponseBody) GetCustomerEmail() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CustomerEmail
 }
 
 func (o *TrackLeadResponseBody) GetCustomerID() string {
@@ -132,18 +139,11 @@ func (o *TrackLeadResponseBody) GetCustomerName() *string {
 	return o.CustomerName
 }
 
-func (o *TrackLeadResponseBody) GetCustomerEmail() *string {
+func (o *TrackLeadResponseBody) GetEventName() string {
 	if o == nil {
-		return nil
+		return ""
 	}
-	return o.CustomerEmail
-}
-
-func (o *TrackLeadResponseBody) GetCustomerAvatar() *string {
-	if o == nil {
-		return nil
-	}
-	return o.CustomerAvatar
+	return o.EventName
 }
 
 func (o *TrackLeadResponseBody) GetMetadata() map[string]any {

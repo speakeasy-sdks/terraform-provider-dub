@@ -5,8 +5,8 @@ package operations
 import (
 	"errors"
 	"fmt"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/internal/utils"
-	"github.com/speakeasy/terraform-provider-dub/internal/sdk/models/shared"
+	"github.com/dub/terraform-provider-dub/internal/sdk/internal/utils"
+	"github.com/dub/terraform-provider-dub/internal/sdk/models/shared"
 	"net/http"
 )
 
@@ -159,22 +159,42 @@ func (u UpdateLinkTagNames) MarshalJSON() ([]byte, error) {
 }
 
 type UpdateLinkRequestBody struct {
-	// The destination URL of the short link.
-	URL string `json:"url"`
-	// The domain of the short link. If not provided, the primary domain for the workspace will be used (or `dub.sh` if the workspace has no domains).
-	Domain *string `json:"domain,omitempty"`
-	// The short link slug. If not provided, a random 7-character slug will be generated.
-	Key *string `json:"key,omitempty"`
-	// This is the ID of the link in your database. If set, it can be used to identify the link in the future. Must be prefixed with `ext_` when passed as a query parameter.
-	ExternalID *string `json:"externalId,omitempty"`
-	// The prefix of the short link slug for randomly-generated keys (e.g. if prefix is `/c/`, generated keys will be in the `/c/:key` format). Will be ignored if `key` is provided.
-	Prefix *string `json:"prefix,omitempty"`
-	// Whether to track conversions for the short link.
-	TrackConversion *bool `default:"false" json:"trackConversion"`
+	// The Android destination URL for the short link for Android device targeting.
+	Android *string `json:"android,omitempty"`
 	// Whether the short link is archived.
 	Archived *bool `default:"false" json:"archived"`
+	// The comments for the short link.
+	Comments *string `json:"comments,omitempty"`
+	// The description of the short link generated via `api.dub.co/metatags`. Will be used for Custom Social Media Cards if `proxy` is true.
+	Description *string `json:"description,omitempty"`
+	// Allow search engines to index your short link. Defaults to `false` if not provided. Learn more: https://d.to/noindex
+	DoIndex *bool `default:"false" json:"doIndex"`
+	// The domain of the short link. If not provided, the primary domain for the workspace will be used (or `dub.sh` if the workspace has no domains).
+	Domain *string `json:"domain,omitempty"`
+	// The URL to redirect to when the short link has expired.
+	ExpiredURL *string `json:"expiredUrl,omitempty"`
+	// The date and time when the short link will expire at.
+	ExpiresAt *string `json:"expiresAt,omitempty"`
+	// This is the ID of the link in your database. If set, it can be used to identify the link in the future. Must be prefixed with `ext_` when passed as a query parameter.
+	ExternalID *string `json:"externalId,omitempty"`
+	// Geo targeting information for the short link in JSON format `{[COUNTRY]: https://example.com }`.
+	Geo *shared.LinkGeoTargeting `json:"geo,omitempty"`
+	// The image of the short link generated via `api.dub.co/metatags`. Will be used for Custom Social Media Cards if `proxy` is true.
+	Image *string `json:"image,omitempty"`
+	// The iOS destination URL for the short link for iOS device targeting.
+	Ios *string `json:"ios,omitempty"`
+	// The short link slug. If not provided, a random 7-character slug will be generated.
+	Key *string `json:"key,omitempty"`
+	// The password required to access the destination URL of the short link.
+	Password *string `json:"password,omitempty"`
+	// The prefix of the short link slug for randomly-generated keys (e.g. if prefix is `/c/`, generated keys will be in the `/c/:key` format). Will be ignored if `key` is provided.
+	Prefix *string `json:"prefix,omitempty"`
+	// Whether the short link uses Custom Social Media Cards feature.
+	Proxy *bool `default:"false" json:"proxy"`
 	// Whether the short link's stats are publicly accessible.
 	PublicStats *bool `default:"false" json:"publicStats"`
+	// Whether the short link uses link cloaking.
+	Rewrite *bool `default:"false" json:"rewrite"`
 	// The unique ID of the tag assigned to the short link. This field is deprecated – use `tagIds` instead.
 	//
 	// Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -183,32 +203,12 @@ type UpdateLinkRequestBody struct {
 	TagIds *UpdateLinkTagIds `json:"tagIds,omitempty"`
 	// The unique name of the tags assigned to the short link (case insensitive).
 	TagNames *UpdateLinkTagNames `json:"tagNames,omitempty"`
-	// The comments for the short link.
-	Comments *string `json:"comments,omitempty"`
-	// The date and time when the short link will expire at.
-	ExpiresAt *string `json:"expiresAt,omitempty"`
-	// The URL to redirect to when the short link has expired.
-	ExpiredURL *string `json:"expiredUrl,omitempty"`
-	// The password required to access the destination URL of the short link.
-	Password *string `json:"password,omitempty"`
-	// Whether the short link uses Custom Social Media Cards feature.
-	Proxy *bool `default:"false" json:"proxy"`
 	// The title of the short link generated via `api.dub.co/metatags`. Will be used for Custom Social Media Cards if `proxy` is true.
 	Title *string `json:"title,omitempty"`
-	// The description of the short link generated via `api.dub.co/metatags`. Will be used for Custom Social Media Cards if `proxy` is true.
-	Description *string `json:"description,omitempty"`
-	// The image of the short link generated via `api.dub.co/metatags`. Will be used for Custom Social Media Cards if `proxy` is true.
-	Image *string `json:"image,omitempty"`
-	// Whether the short link uses link cloaking.
-	Rewrite *bool `default:"false" json:"rewrite"`
-	// The iOS destination URL for the short link for iOS device targeting.
-	Ios *string `json:"ios,omitempty"`
-	// The Android destination URL for the short link for Android device targeting.
-	Android *string `json:"android,omitempty"`
-	// Geo targeting information for the short link in JSON format `{[COUNTRY]: https://example.com }`.
-	Geo *shared.LinkGeoTargeting `json:"geo,omitempty"`
-	// Allow search engines to index your short link. Defaults to `false` if not provided. Learn more: https://d.to/noindex
-	DoIndex *bool `default:"false" json:"doIndex"`
+	// Whether to track conversions for the short link.
+	TrackConversion *bool `default:"false" json:"trackConversion"`
+	// The destination URL of the short link.
+	URL string `json:"url"`
 }
 
 func (u UpdateLinkRequestBody) MarshalJSON() ([]byte, error) {
@@ -222,46 +222,11 @@ func (u *UpdateLinkRequestBody) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *UpdateLinkRequestBody) GetURL() string {
-	if o == nil {
-		return ""
-	}
-	return o.URL
-}
-
-func (o *UpdateLinkRequestBody) GetDomain() *string {
+func (o *UpdateLinkRequestBody) GetAndroid() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Domain
-}
-
-func (o *UpdateLinkRequestBody) GetKey() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Key
-}
-
-func (o *UpdateLinkRequestBody) GetExternalID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.ExternalID
-}
-
-func (o *UpdateLinkRequestBody) GetPrefix() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Prefix
-}
-
-func (o *UpdateLinkRequestBody) GetTrackConversion() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.TrackConversion
+	return o.Android
 }
 
 func (o *UpdateLinkRequestBody) GetArchived() *bool {
@@ -271,11 +236,116 @@ func (o *UpdateLinkRequestBody) GetArchived() *bool {
 	return o.Archived
 }
 
+func (o *UpdateLinkRequestBody) GetComments() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Comments
+}
+
+func (o *UpdateLinkRequestBody) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *UpdateLinkRequestBody) GetDoIndex() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.DoIndex
+}
+
+func (o *UpdateLinkRequestBody) GetDomain() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Domain
+}
+
+func (o *UpdateLinkRequestBody) GetExpiredURL() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ExpiredURL
+}
+
+func (o *UpdateLinkRequestBody) GetExpiresAt() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ExpiresAt
+}
+
+func (o *UpdateLinkRequestBody) GetExternalID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ExternalID
+}
+
+func (o *UpdateLinkRequestBody) GetGeo() *shared.LinkGeoTargeting {
+	if o == nil {
+		return nil
+	}
+	return o.Geo
+}
+
+func (o *UpdateLinkRequestBody) GetImage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Image
+}
+
+func (o *UpdateLinkRequestBody) GetIos() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Ios
+}
+
+func (o *UpdateLinkRequestBody) GetKey() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Key
+}
+
+func (o *UpdateLinkRequestBody) GetPassword() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Password
+}
+
+func (o *UpdateLinkRequestBody) GetPrefix() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Prefix
+}
+
+func (o *UpdateLinkRequestBody) GetProxy() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Proxy
+}
+
 func (o *UpdateLinkRequestBody) GetPublicStats() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.PublicStats
+}
+
+func (o *UpdateLinkRequestBody) GetRewrite() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Rewrite
 }
 
 func (o *UpdateLinkRequestBody) GetTagID() *string {
@@ -299,41 +369,6 @@ func (o *UpdateLinkRequestBody) GetTagNames() *UpdateLinkTagNames {
 	return o.TagNames
 }
 
-func (o *UpdateLinkRequestBody) GetComments() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Comments
-}
-
-func (o *UpdateLinkRequestBody) GetExpiresAt() *string {
-	if o == nil {
-		return nil
-	}
-	return o.ExpiresAt
-}
-
-func (o *UpdateLinkRequestBody) GetExpiredURL() *string {
-	if o == nil {
-		return nil
-	}
-	return o.ExpiredURL
-}
-
-func (o *UpdateLinkRequestBody) GetPassword() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Password
-}
-
-func (o *UpdateLinkRequestBody) GetProxy() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.Proxy
-}
-
 func (o *UpdateLinkRequestBody) GetTitle() *string {
 	if o == nil {
 		return nil
@@ -341,53 +376,18 @@ func (o *UpdateLinkRequestBody) GetTitle() *string {
 	return o.Title
 }
 
-func (o *UpdateLinkRequestBody) GetDescription() *string {
+func (o *UpdateLinkRequestBody) GetTrackConversion() *bool {
 	if o == nil {
 		return nil
 	}
-	return o.Description
+	return o.TrackConversion
 }
 
-func (o *UpdateLinkRequestBody) GetImage() *string {
+func (o *UpdateLinkRequestBody) GetURL() string {
 	if o == nil {
-		return nil
+		return ""
 	}
-	return o.Image
-}
-
-func (o *UpdateLinkRequestBody) GetRewrite() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.Rewrite
-}
-
-func (o *UpdateLinkRequestBody) GetIos() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Ios
-}
-
-func (o *UpdateLinkRequestBody) GetAndroid() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Android
-}
-
-func (o *UpdateLinkRequestBody) GetGeo() *shared.LinkGeoTargeting {
-	if o == nil {
-		return nil
-	}
-	return o.Geo
-}
-
-func (o *UpdateLinkRequestBody) GetDoIndex() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.DoIndex
+	return o.URL
 }
 
 type UpdateLinkRequest struct {

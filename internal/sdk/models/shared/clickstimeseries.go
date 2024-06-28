@@ -3,17 +3,10 @@
 package shared
 
 type ClicksTimeseries struct {
-	// The starting timestamp of the interval
-	Start string `json:"start"`
 	// The number of clicks in the interval
 	Clicks float64 `json:"clicks"`
-}
-
-func (o *ClicksTimeseries) GetStart() string {
-	if o == nil {
-		return ""
-	}
-	return o.Start
+	// The starting timestamp of the interval
+	Start string `json:"start"`
 }
 
 func (o *ClicksTimeseries) GetClicks() float64 {
@@ -21,4 +14,11 @@ func (o *ClicksTimeseries) GetClicks() float64 {
 		return 0.0
 	}
 	return o.Clicks
+}
+
+func (o *ClicksTimeseries) GetStart() string {
+	if o == nil {
+		return ""
+	}
+	return o.Start
 }

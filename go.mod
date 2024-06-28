@@ -1,4 +1,4 @@
-module github.com/speakeasy/terraform-provider-dub
+module github.com/dub/terraform-provider-dub
 
 go 1.21
 

@@ -16,8 +16,8 @@ Dub.co API: Dub is link management infrastructure for companies to create market
 terraform {
   required_providers {
     dub = {
-      source  = "speakeasy/dub"
-      version = "0.0.1"
+      source  = "dub/dub"
+      version = "0.1.0"
     }
   }
 }

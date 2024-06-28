@@ -34,10 +34,10 @@ func (e *InviteExpiredCode) UnmarshalJSON(data []byte) error {
 type InviteExpiredError struct {
 	// A short code indicating the error code returned.
 	Code InviteExpiredCode `json:"code"`
-	// A human readable explanation of what went wrong.
-	Message string `json:"message"`
 	// A link to our documentation with more details about this error code
 	DocURL *string `json:"doc_url,omitempty"`
+	// A human readable explanation of what went wrong.
+	Message string `json:"message"`
 }
 
 func (o *InviteExpiredError) GetCode() InviteExpiredCode {
@@ -47,18 +47,18 @@ func (o *InviteExpiredError) GetCode() InviteExpiredCode {
 	return o.Code
 }
 
-func (o *InviteExpiredError) GetMessage() string {
-	if o == nil {
-		return ""
-	}
-	return o.Message
-}
-
 func (o *InviteExpiredError) GetDocURL() *string {
 	if o == nil {
 		return nil
 	}
 	return o.DocURL
+}
+
+func (o *InviteExpiredError) GetMessage() string {
+	if o == nil {
+		return ""
+	}
+	return o.Message
 }
 
 type InviteExpired struct {

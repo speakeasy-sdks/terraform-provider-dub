@@ -3,12 +3,19 @@
 package shared
 
 type SalesOS struct {
+	// The total amount of sales from this OS
+	Amount float64 `json:"amount"`
 	// The name of the OS
 	Os string `json:"os"`
 	// The number of sales from this OS
 	Sales float64 `json:"sales"`
-	// The total amount of sales from this OS
-	Amount float64 `json:"amount"`
+}
+
+func (o *SalesOS) GetAmount() float64 {
+	if o == nil {
+		return 0.0
+	}
+	return o.Amount
 }
 
 func (o *SalesOS) GetOs() string {
@@ -23,11 +30,4 @@ func (o *SalesOS) GetSales() float64 {
 		return 0.0
 	}
 	return o.Sales
-}
-
-func (o *SalesOS) GetAmount() float64 {
-	if o == nil {
-		return 0.0
-	}
-	return o.Amount
 }

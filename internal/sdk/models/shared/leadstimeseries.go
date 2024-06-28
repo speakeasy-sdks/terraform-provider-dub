@@ -3,17 +3,10 @@
 package shared
 
 type LeadsTimeseries struct {
-	// The starting timestamp of the interval
-	Start string `json:"start"`
 	// The number of leads in the interval
 	Leads float64 `json:"leads"`
-}
-
-func (o *LeadsTimeseries) GetStart() string {
-	if o == nil {
-		return ""
-	}
-	return o.Start
+	// The starting timestamp of the interval
+	Start string `json:"start"`
 }
 
 func (o *LeadsTimeseries) GetLeads() float64 {
@@ -21,4 +14,11 @@ func (o *LeadsTimeseries) GetLeads() float64 {
 		return 0.0
 	}
 	return o.Leads
+}
+
+func (o *LeadsTimeseries) GetStart() string {
+	if o == nil {
+		return ""
+	}
+	return o.Start
 }
