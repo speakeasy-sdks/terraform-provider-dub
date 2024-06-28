@@ -1,0 +1,13 @@
+workflowVersion: 1.0.0
+sources:
+    dub:
+        inputs:
+            - location: https://api.dub.co
+        overlays:
+            - location: overlay.yaml
+        registry:
+            location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/dub
+targets:
+    sdk:
+        target: terraform
+        source: dub
